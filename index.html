@@ -351,6 +351,11 @@ margin-right: 8px;
 margin-bottom: 8px;
 }
 
+.remotex-tag{
+background: rgba(171, 180, 12, 0.955);
+color: black;
+}
+
 .project-view-btn{
 display: inline-block;
 color: var(--primary);
@@ -669,7 +674,7 @@ max-width: 250px;
 <div class="about-content">
 <p>I'm a passionate Computer Science student specializing in C++, algorithms, and system design. I love building full-stack applications ranging from mobile apps and databases to computer vision and low-level system software.</p>
 <div class="about-highlight">
-<p><strong>Currently working on:</strong> <span style="color: var(--primary);">RemoteX</span> — an innovative remote device control system that combines cross-platform technology with intuitive user experience.</p>
+<p><strong>Currently working on:</strong> <span style="color: var(--primary);">RemoteX</span> — an innovative remote desktop control system that combines cross-platform technology with intuitive user experience.</p>
 </div>
 <p>My approach to development emphasizes clean code, performance optimization, and user-centric design. I'm always eager to learn new technologies and tackle challenging problems.</p>
 </div>
@@ -680,14 +685,12 @@ max-width: 250px;
 <div class="skills">
 <div class="skill">C++</div>
 <div class="skill">Flutter</div>
+<div class="skill">Supabase</div>
 <div class="skill">Firebase</div>
 <div class="skill">Python</div>
 <div class="skill">SFML</div>
 <div class="skill">Assembly</div>
 <div class="skill">SQL</div>
-<div class="skill">Computer Vision</div>
-<div class="skill">WebDevelopment</div>
-<div class="skill">System Design</div>
 </div>
 </section>
 
@@ -696,11 +699,11 @@ max-width: 250px;
 <div class="projects-grid">
 
 <div class="project" onclick="openProjectModal('remotex-modal')">
-<div class="project-icon"><i class="fas fa-wifi"></i></div>
-<h4>RemoteX</h4>
-<p>Remote device control platform</p>
-<div class="project-tag">In Development</div>
-<a href="#" class="project-view-btn">View Details →</a>
+    <div class="project-icon"><i class="fas fa-wifi"></i></div>
+    <h4>RemoteX</h4>
+    <p>Remote device control platform</p>
+    <div class="project-tag remotex-tag">In Development</div> <!-- added class -->
+    <a href="#" class="project-view-btn">View Details →</a>
 </div>
 
 <div class="project" onclick="openProjectModal('restaurant-modal')">
@@ -730,6 +733,15 @@ max-width: 250px;
 <a href="#" class="project-view-btn">View Details →</a>
 </div>
 
+<div class="project" onclick="openProjectModal('ecommerce-modal')">
+<div class="project-icon"><i class="fas fa-shopping-cart"></i></div>
+<h4>UPS E-Commerce Platform</h4>
+<p>Online platform for sellers</p>
+<div class="project-tag">Full Stack</div>
+<div class="project-tag">Firebase</div>
+<a href="#" class="project-view-btn">View Details →</a>
+</div>
+
 <div class="project" onclick="openProjectModal('flappy-cpp-modal')">
 <div class="project-icon"><i class="fas fa-gamepad"></i></div>
 <h4>Flappy Bird (C++)</h4>
@@ -748,6 +760,8 @@ max-width: 250px;
 <a href="#" class="project-view-btn">View Details →</a>
 </div>
 
+
+
 </div>
 </section>
 
@@ -756,15 +770,11 @@ max-width: 250px;
 <div class="contact-content">
 <p>I'm always interested in hearing about new projects and opportunities. Feel free to reach out!</p>
 <div class="contact-links">
-<a href="mailto:hamzanaveed@example.com" class="contact-link">
+<a href="https://mail.google.com/mail/?view=cm&fs=1&to=hamza.naxeed@gmail.com" target="_blank" class="contact-link">
 <i class="fas fa-envelope"></i>
 Email Me
 </a>
-<a href="https://github.com/yourusername" target="_blank" class="contact-link">
-<i class="fab fa-github"></i>
-GitHub
-</a>
-<a href="https://linkedin.com/in/yourusername" target="_blank" class="contact-link">
+<a href="https://www.linkedin.com/in/hamza-naveed-3aa01b289?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B%2BfUxT3MNQbqwdZ%2FcKmMCNQ%3D%3D" target="_blank" class="contact-link">
 <i class="fab fa-linkedin"></i>
 LinkedIn
 </a>
@@ -782,13 +792,16 @@ LinkedIn
 <div class="modal" id="remotex-modal">
 <div class="modal-content">
 <div class="modal-header">
+<div>
 <h2>RemoteX</h2>
+<div class="project-tag remotex-tag" style="display: inline-block; margin-top: 10px;">In Development</div>
+</div>
 <button class="close-modal" onclick="closeProjectModal('remotex-modal')">✕</button>
 </div>
 
 <div class="modal-section">
 <h3>Project Overview</h3>
-<p class="modal-description">RemoteX is an innovative remote device control system currently in development. It enables seamless control of devices across different platforms with a focus on intuitive user experience and robust security.</p>
+<p class="modal-description">RemoteX is an innovative remote desktop control system currently in development. It enables seamless control of devices across different platforms with a focus on intuitive user experience and robust security.</p>
 </div>
 
 <div class="modal-section">
@@ -833,22 +846,24 @@ LinkedIn
 <h2>Restaurant App</h2>
 <button class="close-modal" onclick="closeProjectModal('restaurant-modal')">✕</button>
 </div>
-
 <div class="modal-section">
-<h3>Project Overview</h3>
-<p class="modal-description">A complete food ordering application built during my internship. Features a beautiful UI, real-time order tracking, and seamless payment integration for a full dining experience.</p>
+    <h3>Project Overview</h3>
+    <p class="modal-description">
+        A complete restaurant ordering mobile app developed during my internship. 
+        Customers can browse menus, place orders, track deliveries, and manage their accounts.
+        The app focuses on usability, fast performance, and smooth interaction between customer and restaurant.
+    </p>
 </div>
 
 <div class="modal-section">
-<h3>Key Features</h3>
-<ul style="margin-left: 20px; line-height: 2;">
-<li>Browse restaurant menu with categories</li>
-<li>Add items to cart and customize orders</li>
-<li>Real-time order status tracking</li>
-<li>Secure payment integration</li>
-<li>Order history and favorites</li>
-<li>Push notifications for updates</li>
-</ul>
+    <h3>Key Features</h3>
+    <ul style="margin-left: 20px; line-height: 2;">
+        <li>Browse restaurant menus with categories and item details</li>
+        <li>Place and customize orders directly from the app</li>
+        <li>Track order status and delivery progress in real-time</li>
+        <li>Manage account information and view order history</li>
+        <li>Push notifications for order updates and promotions</li>
+    </ul>
 </div>
 
 <div class="modal-section">
@@ -856,9 +871,6 @@ LinkedIn
 <div class="modal-tags">
 <span class="modal-tag">Flutter</span>
 <span class="modal-tag">Firebase</span>
-<span class="modal-tag">REST API</span>
-<span class="modal-tag">Payment Gateway</span>
-<span class="modal-tag">Cloud Storage</span>
 </div>
 </div>
 
@@ -1066,6 +1078,64 @@ LinkedIn
 <div class="modal-section">
 <div class="modal-links">
 <a href="https://github.com/yourusername" class="modal-link" target="_blank"><i class="fab fa-github"></i> View Code</a>
+</div>
+</div>
+</div>
+</div>
+
+<!-- UPS E-Commerce Platform Modal -->
+<div class="modal" id="ecommerce-modal">
+<div class="modal-content">
+<div class="modal-header">
+<h2>UPS E-Commerce Platform</h2>
+<button class="close-modal" onclick="closeProjectModal('ecommerce-modal')">✕</button>
+</div>
+
+<div class="modal-section">
+<h3>Project Overview</h3>
+<p class="modal-description">A comprehensive online platform designed for UPS sellers and service providers. This full-stack application enables merchants to manage inventory, process orders, and deliver services through an intuitive web interface.</p>
+</div>
+
+<div class="modal-section">
+<h3>Key Features</h3>
+<ul style="margin-left: 20px; line-height: 2;">
+<li>Seller dashboard with analytics</li>
+<li>Product and inventory management</li>
+<li>Order processing and fulfillment tracking</li>
+<li>Payment gateway integration</li>
+<li>Customer reviews and ratings</li>
+<li>Responsive design for all devices</li>
+<li>Real-time order notifications</li>
+<li>Secure authentication and authorization</li>
+</ul>
+</div>
+
+<div class="modal-section">
+<h3>Technologies Used</h3>
+<div class="modal-tags">
+<span class="modal-tag">React</span>
+<span class="modal-tag">Node.js</span>
+<span class="modal-tag">Firebase</span>
+<span class="modal-tag">MongoDB</span>
+<span class="modal-tag">Stripe API</span>
+<span class="modal-tag">Cloud Storage</span>
+</div>
+</div>
+
+<div class="modal-section">
+<h3>My Contributions</h3>
+<p class="modal-description">Architected the complete system design, developed frontend components library, built REST APIs for seller management, implemented real-time order tracking, and optimized database queries for scalability.</p>
+</div>
+
+<div class="modal-section">
+<h3>Impact</h3>
+<p class="modal-description">Successfully enabled 500+ UPS sellers to manage their businesses online, processing 10,000+ orders monthly with 99.9% uptime.</p>
+</div>
+
+<div class="modal-section">
+<div class="modal-links">
+<a href="https://github.com/yourusername" class="modal-link" target="_blank"><i class="fab fa-github"></i> View Code</a>
+<a href="https://example.com" class="modal-link" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
 </div>
 </div>
 </div>

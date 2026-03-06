@@ -5,6 +5,15 @@ background:#f5f5f5;
 color:#333;
 }
 
+.remotex-tag {
+    background-color: #f59e0b;  /* new color, e.g., yellow/orange */
+    color: black;                /* text color */
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
 header{
 background:#111827;
 color:white;
