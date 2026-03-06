@@ -94,6 +94,18 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 transition: all 0.3s ease;
 }
 
+header .left-section {
+display: flex;
+align-items: center;
+gap: 2rem;
+}
+
+header .right-section {
+display: flex;
+align-items: center;
+gap: 1rem;
+}
+
 header:hover {
 background: var(--glass-bg);
 }
@@ -113,10 +125,6 @@ cursor: pointer;
 padding: 0.5rem;
 border-radius: 0.5rem;
 transition: all 0.3s ease;
-position: absolute;
-right: 8%;
-top: 50%;
-transform: translateY(-50%);
 }
 
 .theme-toggle:hover{
@@ -911,6 +919,18 @@ flex-direction: column;
 gap: 1.5rem;
 }
 
+header .left-section {
+flex-direction: column;
+gap: 1rem;
+width: 100%;
+}
+
+header .right-section {
+position: absolute;
+top: 1.5rem;
+right: 5%;
+}
+
 nav{
 gap: 1rem;
 }
@@ -994,6 +1014,7 @@ margin-top: 4rem;
 <body>
 
 <header>
+<div class="left-section">
 <h1>Hamza Naveed</h1>
 <nav>
 <a href="#about">About</a>
@@ -1001,9 +1022,12 @@ margin-top: 4rem;
 <a href="#projects">Projects</a>
 <a href="#contact">Contact</a>
 </nav>
+</div>
+<div class="right-section">
 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
 <i class="fas fa-moon"></i>
 </button>
+</div>
 </header>
 
 <section class="hero">
@@ -1020,25 +1044,36 @@ margin-top: 4rem;
 <section id="about">
 <h3 class="section-title">About Me</h3>
 <div class="about-content">
-<p>I'm a passionate Computer Science student specializing in C++, algorithms, and system design. I love building full-stack applications ranging from mobile apps and databases to computer vision and low-level system software.</p>
-<div class="about-highlight">
+<p>
+I am a Computer Science student and software developer with strong experience
+in building real-world applications using Flutter, C++, and modern web technologies.
+I enjoy solving complex engineering problems and designing scalable systems.
+
+My goal is to work on impactful software products and contribute to global
+technology companies where I can build systems used by millions of users.
+</p><div class="about-highlight">
 <p><strong>Currently working on:</strong> <span style="color: var(--primary);">RemoteX</span> — an innovative remote desktop control system that combines cross-platform technology with intuitive user experience.</p>
 </div>
 <p>My approach to development emphasizes clean code, performance optimization, and user-centric design. I'm always eager to learn new technologies and tackle challenging problems.</p>
 </div>
 </section>
 
-<section id="skills">
+<section id="stack">
 <h3 class="section-title">Tech Stack</h3>
+
 <div class="skills">
+
 <div class="skill">C++</div>
 <div class="skill">Flutter</div>
-<div class="skill">Supabase</div>
 <div class="skill">Firebase</div>
-<div class="skill">Python</div>
-<div class="skill">SFML</div>
-<div class="skill">Assembly</div>
-<div class="skill">SQL</div>
+<div class="skill">React</div>
+<div class="skill">Node.js</div>
+<div class="skill">Express</div>
+<div class="skill">MS SQL</div>
+<div class="skill">REST APIs</div>
+<div class="skill">WebSockets</div>
+<div class="skill">Git and Github</div>
+
 </div>
 </section>
 
@@ -1703,11 +1738,32 @@ function updateThemeIcon(theme) {
 if (theme === 'dark') {
 themeIcon.className = 'fas fa-moon';
 } else {
-themeIcon.className = 'fas fa-sun';
+themeIcon.className = 'far fa-lightbulb';
 }
 }
 
 </script>
 
+<script>
+
+const observer = new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.style.opacity=1;
+entry.target.style.transform="translateY(0)";
+}
+});
+});
+
+document.querySelectorAll("section").forEach(section=>{
+section.style.opacity=0;
+section.style.transform="translateY(40px)";
+section.style.transition="all 0.8s ease";
+observer.observe(section);
+});
+
+</script>
+
 </body>
 </html>
+
