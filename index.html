@@ -1077,6 +1077,14 @@ technology companies where I can build systems used by millions of users.
 <section id="projects">
 <h3 class="section-title">Featured Projects</h3>
 <div class="projects-grid">
+ 
+<div class="project" onclick="openProjectModal('finance-modal')">
+    <div class="project-icon"><i class="fas fa-wallet"></i></div>
+    <h4>Finance Master</h4>
+    <p>All-in-one offline finance manager: accounts, stocks, dividends, encrypted backups, and biometric protection.</p>
+    <div class="project-tag">Flutter</div>
+    <a href="#" class="project-view-btn">View Details →</a>
+</div>
 
 <div class="project" onclick="openProjectModal('remotex-modal')">
     <div class="project-icon"><i class="fas fa-wifi"></i></div>
@@ -1186,6 +1194,56 @@ LinkedIn
 
 <!-- PROJECT MODALS -->
 
+<!-- Finance Master Modal -->
+<div class="modal" id="finance-modal">
+<div class="modal-content">
+<div class="modal-header">
+<div>
+<h2>Finance Master</h2>
+</div>
+<button class="close-modal" onclick="closeProjectModal('finance-modal')">✕</button>
+</div>
+
+<div class="modal-section">
+<h3>Project Overview</h3>
+<p class="modal-description">Finance Master is a comprehensive offline finance manager that helps users track bank accounts, wallets, transactions, stocks (with automatic PSX price updates), dividends, goals, secure notes, and saved passwords. It includes encrypted backups and fingerprint protection for privacy.</p>
+</div>
+
+<div class="modal-section">
+<h3>Key Features</h3>
+<ul style="margin-left: 20px; line-height: 2;">
+<li>Track multiple bank accounts and wallets with analytics</li>
+<li>Transaction history and income/expense breakdown</li>
+<li>Stock portfolio tracking with timeline and P/L per asset</li>
+<li>Automatic price updates for Pakistan Stock Exchange (PSX)</li>
+<li>Dividend tracking and reporting</li>
+<li>Encrypted offline backups and fingerprint protection</li>
+<li>Secure local password vault and financial notes</li>
+<li>Goal tracking and financial planning</li>
+</ul>
+</div>
+
+<div class="modal-section">
+<h3>Technologies Used</h3>
+<div class="modal-tags">
+<span class="modal-tag">Flutter</span>
+<span class="modal-tag">SQFLite</span>
+<span class="modal-tag">Local Encryption</span>
+<span class="modal-tag">PSX API</span>
+<span class="modal-tag">Biometrics</span>
+</div>
+</div>
+
+<div class="modal-section">
+    <div class="modal-links">
+        <a href="https://www.linkedin.com/posts/hamza-naveed-_one-of-the-most-difficult-task-in-investment-ugcPost-7469328843904827393-c-Ui/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEXyrXIBOPznvhUFb04dNM7ub7d0DOSHCps" class="modal-link" target="_blank">
+            <i class="fab fa-linkedin"></i> View LinkedIn
+        </a>
+    </div>
+</div>
+</div>
+</div>
+
 <!-- RemoteX Modal -->
 <div class="modal" id="remotex-modal">
 <div class="modal-content">
@@ -1221,11 +1279,6 @@ LinkedIn
 <span class="modal-tag">Supabase</span>
 <span class="modal-tag">Network Programming</span>
 </div>
-</div>
-
-<div class="modal-section">
-<h3>Project Status</h3>
-<p class="modal-description">Currently in active development. Core architecture complete, working on frontend polish and performance optimization.</p>
 </div>
 
 <div class="modal-section">
@@ -1771,4 +1824,3 @@ observer.observe(section);
 
 </body>
 </html>
-
