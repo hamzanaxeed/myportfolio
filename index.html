@@ -1,1826 +1,1825 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Hamza Naveed | Software Developer</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins', sans-serif;
-}
-
-:root{
---primary: #06b6d4;
---primary-hover: #0891b2;
---secondary: #8b5cf6;
---secondary-hover: #7c3aed;
---accent: #f59e0b;
---dark-bg: #0a0a0a;
---darker-bg: #000000;
---card-bg: rgba(15, 23, 42, 0.8);
---card-bg-solid: #1e293b;
---text-primary: #f8fafc;
---text-secondary: #cbd5e1;
---text-muted: #94a3b8;
---border-color: rgba(6, 182, 212, 0.2);
---glass-bg: rgba(15, 23, 42, 0.7);
---glass-border: rgba(6, 182, 212, 0.1);
-}
-
-/* Light Mode Variables */
-[data-theme="light"] {
---primary: #0891b2;
---primary-hover: #06b6d4;
---secondary: #7c3aed;
---secondary-hover: #8b5cf6;
---accent: #d97706;
---dark-bg: #ffffff;
---darker-bg: #f1f5f9;
---card-bg: rgba(255, 255, 255, 0.9);
---card-bg-solid: #ffffff;
---text-primary: #0f172a;
---text-secondary: #475569;
---text-muted: #64748b;
---border-color: rgba(8, 145, 178, 0.2);
---glass-bg: rgba(255, 255, 255, 0.8);
---glass-border: rgba(8, 145, 178, 0.1);
-}
-
-html {
-scroll-behavior: smooth;
-}
-
-body{
-background: 
-  radial-gradient(circle at 20% 50%, rgba(6, 182, 212, 0.08) 0%, transparent 50%),
-  radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
-  radial-gradient(circle at 40% 80%, rgba(245, 158, 11, 0.05) 0%, transparent 50%),
-  linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
-color: var(--text-primary);
-line-height: 1.7;
-overflow-x: hidden;
-min-height: 100vh;
-font-feature-settings: "kern" 1, "liga" 1;
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
-transition: background 0.3s ease, color 0.3s ease;
-}
-
-/* HEADER */
-
-header{
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 1.5rem 8%;
-background: var(--glass-bg);
-backdrop-filter: blur(20px);
--webkit-backdrop-filter: blur(20px);
-position: sticky;
-top: 0;
-z-index: 100;
-border-bottom: 1px solid var(--glass-border);
-box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-transition: all 0.3s ease;
-}
-
-header .left-section {
-display: flex;
-align-items: center;
-gap: 2rem;
-}
-
-header .right-section {
-display: flex;
-align-items: center;
-gap: 1rem;
-}
-
-header:hover {
-background: var(--glass-bg);
-}
-
-header h1{
-font-size: 24px;
-font-weight: 700;
-color: var(--text-primary);
-}
-
-.theme-toggle{
-background: none;
-border: none;
-color: var(--text-secondary);
-font-size: 1.2rem;
-cursor: pointer;
-padding: 0.5rem;
-border-radius: 0.5rem;
-transition: all 0.3s ease;
-}
-
-.theme-toggle:hover{
-color: var(--primary);
-background: rgba(6, 182, 212, 0.1);
-}
-
-nav{
-display: flex;
-gap: 30px;
-}
-
-nav a{
-color: var(--text-secondary);
-text-decoration: none;
-font-weight: 500;
-font-size: 0.95rem;
-position: relative;
-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-padding: 0.5rem 1rem;
-border-radius: 0.5rem;
-}
-
-nav a::before{
-content: '';
-position: absolute;
-bottom: 0;
-left: 50%;
-width: 0;
-height: 2px;
-background: linear-gradient(90deg, var(--primary), var(--secondary));
-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-transform: translateX(-50%);
-}
-
-nav a:hover{
-color: var(--primary);
-background: rgba(6, 182, 212, 0.1);
-transform: translateY(-2px);
-}
-
-nav a:hover::before{
-width: 100%;
-}
-
-/* HERO */
-
-.hero{
-min-height: 100vh;
-display: flex;
-align-items: center;
-justify-content: center;
-text-align: center;
-position: relative;
-overflow: hidden;
-padding: 1rem 1rem 2rem;
-}
-
-.hero::before{
-content: '';
-position: absolute;
-width: 600px;
-height: 600px;
-background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, transparent 70%);
-border-radius: 50%;
-top: -300px;
-right: -300px;
-animation: float 6s ease-in-out infinite;
-}
-
-.hero::after{
-content: '';
-position: absolute;
-width: 400px;
-height: 400px;
-background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
-border-radius: 50%;
-bottom: -200px;
-left: -200px;
-animation: float 8s ease-in-out infinite reverse;
-}
-
-.hero-content{
-position: relative;
-z-index: 2;
-animation: fadeInUp 1s ease-out;
-max-width: 800px;
-}
-
-.hero h2{
-font-size: clamp(2.5rem, 5vw, 4rem);
-margin-bottom: 1.5rem;
-font-weight: 800;
-line-height: 1.1;
-letter-spacing: -0.02em;
-}
-
-.hero span{
-color: var(--text-primary);
-}
-
-.hero p{
-max-width: 600px;
-opacity: 0.9;
-font-size: 1.2rem;
-margin: 0 auto 3rem;
-line-height: 1.6;
-color: var(--text-secondary);
-}
-
-.cta-buttons{
-display: flex;
-gap: 1.5rem;
-justify-content: center;
-flex-wrap: wrap;
-margin-top: 2rem;
-}
-
-.cta-btn{
-padding: 1rem 2.5rem;
-border-radius: 0.75rem;
-text-decoration: none;
-font-weight: 600;
-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-cursor: pointer;
-border: none;
-font-size: 1.1rem;
-position: relative;
-overflow: hidden;
-letter-spacing: 0.025em;
-}
-
-.cta-btn::before {
-content: '';
-position: absolute;
-top: 0;
-left: -100%;
-width: 100%;
-height: 100%;
-background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-transition: left 0.5s ease;
-}
-
-.cta-btn:hover::before {
-left: 100%;
-}
-
-.btn-primary{
-background: linear-gradient(135deg, var(--primary), var(--secondary));
-color: white;
-box-shadow: 0 10px 30px rgba(6, 182, 212, 0.3);
-border: 1px solid rgba(6, 182, 212, 0.2);
-}
-
-.btn-primary:hover{
-transform: translateY(-3px);
-box-shadow: 0 20px 40px rgba(6, 182, 212, 0.4);
-background: linear-gradient(135deg, var(--primary-hover), var(--secondary-hover));
-}
-
-.btn-secondary{
-background: rgba(255, 255, 255, 0.05);
-color: var(--primary);
-border: 2px solid var(--primary);
-backdrop-filter: blur(10px);
-}
-
-.btn-secondary:hover{
-background: rgba(6, 182, 212, 0.1);
-transform: translateY(-2px);
-box-shadow: 0 10px 25px rgba(6, 182, 212, 0.2);
-}
-
-/* SECTIONS */
-
-section{
-padding: 4rem 8%;
-position: relative;
-}
-
-h3.section-title{
-font-size: clamp(2rem, 4vw, 3rem);
-margin-bottom: 2rem;
-text-align: center;
-font-weight: 800;
-position: relative;
-letter-spacing: -0.025em;
-color: var(--text-primary);
-}
-
-h3.section-title::after{
-content: '';
-display: block;
-width: 120px;
-height: 4px;
-background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
-margin: 2rem auto 0;
-border-radius: 2px;
-box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
-}
-
-/* ABOUT */
-
-#about{
-background: 
-  radial-gradient(circle at 30% 20%, rgba(6, 182, 212, 0.03) 0%, transparent 50%),
-  radial-gradient(circle at 70% 80%, rgba(139, 92, 246, 0.03) 0%, transparent 50%);
-}
-
-.about-content{
-max-width: 900px;
-margin: auto;
-}
-
-.about-content p{
-font-size: 1.2rem;
-line-height: 1.8;
-opacity: 0.95;
-margin-bottom: 2rem;
-color: var(--text-secondary);
-}
-
-.about-highlight{
-background: var(--glass-bg);
-backdrop-filter: blur(20px);
--webkit-backdrop-filter: blur(20px);
-padding: 2.5rem;
-border-radius: 1rem;
-border: 1px solid var(--glass-border);
-border-left: 4px solid var(--primary);
-margin-top: 3rem;
-box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-position: relative;
-overflow: hidden;
-}
-
-.about-highlight::before {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-width: 4px;
-height: 100%;
-background: linear-gradient(180deg, var(--primary), var(--secondary));
-}
-
-/* SKILLS */
-
-.skills{
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-gap: 1.5rem;
-max-width: 1000px;
-margin: auto;
-}
-
-.skill{
-background: var(--glass-bg);
-backdrop-filter: blur(10px);
--webkit-backdrop-filter: blur(10px);
-padding: 1rem 2rem;
-border-radius: 2rem;
-font-weight: 600;
-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-border: 1px solid var(--glass-border);
-cursor: pointer;
-color: var(--text-secondary);
-position: relative;
-overflow: hidden;
-font-size: 1rem;
-}
-
-.skill::before {
-content: '';
-position: absolute;
-top: 0;
-left: -100%;
-width: 100%;
-height: 100%;
-background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.1), transparent);
-transition: left 0.5s ease;
-}
-
-.skill:hover{
-background: linear-gradient(135deg, var(--primary), var(--secondary));
-color: white;
-transform: translateY(-4px) scale(1.05);
-box-shadow: 0 12px 30px rgba(6, 182, 212, 0.3);
-border-color: var(--primary);
-}
-
-.skill:hover::before {
-left: 100%;
-}
-
-/* PROJECTS */
-
-#projects{
-background: 
-  radial-gradient(circle at 20% 30%, rgba(6, 182, 212, 0.02) 0%, transparent 50%),
-  radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.02) 0%, transparent 50%);
-}
-
-.projects-grid{
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-gap: 2rem;
-max-width: 1400px;
-margin: auto;
-}
-
-.project{
-background: var(--glass-bg);
-backdrop-filter: blur(20px);
--webkit-backdrop-filter: blur(20px);
-padding: 2.5rem;
-border-radius: 1.5rem;
-cursor: pointer;
-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-border: 1px solid var(--glass-border);
-position: relative;
-overflow: hidden;
-box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-}
-
-.project::before{
-content: '';
-position: absolute;
-top: 0;
-left: -100%;
-width: 100%;
-height: 100%;
-background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.1), transparent);
-transition: left 0.6s ease;
-z-index: 1;
-}
-
-.project::after {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: linear-gradient(135deg, rgba(6, 182, 212, 0.05), rgba(139, 92, 246, 0.05));
-opacity: 0;
-transition: opacity 0.3s ease;
-}
-
-.project:hover::before{
-left: 100%;
-}
-
-.project:hover::after {
-opacity: 1;
-}
-
-.project:hover{
-transform: translateY(-12px) scale(1.02);
-border-color: var(--primary);
-box-shadow: 0 20px 60px rgba(6, 182, 212, 0.2);
-}
-
-.project > * {
-position: relative;
-z-index: 2;
-}
-
-.project-icon{
-font-size: 2.5rem;
-margin-bottom: 1.5rem;
-color: var(--primary);
-transition: all 0.3s ease;
-}
-
-.project:hover .project-icon {
-transform: scale(1.1);
-color: var(--secondary);
-}
-
-.project h4{
-margin-bottom: 1rem;
-font-size: 1.5rem;
-font-weight: 700;
-color: var(--text-primary);
-}
-
-.project p{
-opacity: 0.85;
-margin-bottom: 1.5rem;
-color: var(--text-secondary);
-line-height: 1.6;
-}
-
-.project-tag{
-display: inline-block;
-background: rgba(6, 182, 212, 0.15);
-color: var(--primary);
-padding: 0.5rem 1rem;
-border-radius: 2rem;
-font-size: 0.85rem;
-margin-right: 0.5rem;
-margin-bottom: 0.75rem;
-font-weight: 600;
-border: 1px solid rgba(6, 182, 212, 0.2);
-transition: all 0.3s ease;
-}
-
-.project-tag:hover {
-background: rgba(6, 182, 212, 0.25);
-transform: scale(1.05);
-}
-
-.remotex-tag{
-background: rgba(245, 158, 11, 0.9);
-color: #000;
-border-color: var(--accent);
-}
-
-.project-view-btn{
-display: inline-flex;
-align-items: center;
-gap: 0.5rem;
-color: var(--primary);
-font-weight: 600;
-text-decoration: none;
-margin-top: 1.5rem;
-transition: all 0.3s ease;
-padding: 0.5rem 0;
-position: relative;
-}
-
-.project-view-btn::after {
-content: '→';
-transition: transform 0.3s ease;
-}
-
-.project-view-btn:hover{
-color: var(--secondary);
-transform: translateX(5px);
-}
-
-.project-view-btn:hover::after {
-transform: translateX(3px);
-}
-
-/* CONTACT */
-
-#contact{
-background: 
-  radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.02) 0%, transparent 50%);
-text-align: center;
-}
-
-.contact-content{
-max-width: 700px;
-margin: auto;
-}
-
-.contact-content p {
-font-size: 1.2rem;
-color: var(--text-secondary);
-margin-bottom: 3rem;
-line-height: 1.6;
-}
-
-.contact-links{
-display: flex;
-gap: 2rem;
-justify-content: center;
-flex-wrap: wrap;
-margin-top: 3rem;
-}
-
-.contact-link{
-display: flex;
-align-items: center;
-gap: 1rem;
-color: var(--text-primary);
-text-decoration: none;
-font-weight: 600;
-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-padding: 1.25rem 2rem;
-border-radius: 1rem;
-border: 1px solid var(--glass-border);
-background: var(--glass-bg);
-backdrop-filter: blur(10px);
--webkit-backdrop-filter: blur(10px);
-box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-position: relative;
-overflow: hidden;
-}
-
-.contact-link::before {
-content: '';
-position: absolute;
-top: 0;
-left: -100%;
-width: 100%;
-height: 100%;
-background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.1), transparent);
-transition: left 0.5s ease;
-}
-
-.contact-link:hover::before {
-left: 100%;
-}
-
-.contact-link:hover{
-border-color: var(--primary);
-color: var(--primary);
-background: rgba(6, 182, 212, 0.05);
-transform: translateY(-4px);
-box-shadow: 0 12px 32px rgba(6, 182, 212, 0.2);
-}
-
-/* FOOTER */
-
-footer{
-text-align: center;
-padding: 3rem;
-background: var(--darker-bg);
-border-top: 1px solid var(--glass-border);
-margin-top: 6rem;
-position: relative;
-}
-
-footer::before {
-content: '';
-position: absolute;
-top: 0;
-left: 50%;
-transform: translateX(-50%);
-width: 200px;
-height: 1px;
-background: linear-gradient(90deg, transparent, var(--primary), transparent);
-}
-
-footer p{
-opacity: 0.7;
-color: var(--text-muted);
-font-size: 0.95rem;
-}
-
-/* MODAL */
-
-.modal{
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: rgba(0, 0, 0, 0.7);
-backdrop-filter: blur(8px);
--webkit-backdrop-filter: blur(8px);
-display: none;
-align-items: center;
-justify-content: center;
-z-index: 1000;
-animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal.active{
-display: flex;
-}
-
-.modal-content{
-background: var(--glass-bg);
-backdrop-filter: blur(30px);
--webkit-backdrop-filter: blur(30px);
-padding: 3rem;
-border-radius: 1.5rem;
-max-width: 800px;
-width: 90%;
-max-height: 85vh;
-overflow-y: auto;
-border: 1px solid var(--glass-border);
-box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
-animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-position: relative;
-}
-
-.modal-content::before {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-height: 1px;
-background: linear-gradient(90deg, transparent, var(--primary), transparent);
-opacity: 0.5;
-}
-
-.modal-header{
-display: flex;
-justify-content: space-between;
-align-items: flex-start;
-margin-bottom: 2rem;
-border-bottom: 1px solid var(--glass-border);
-padding-bottom: 1.5rem;
-}
-
-.modal-header h2{
-font-size: 2rem;
-font-weight: 800;
-margin: 0;
-color: var(--text-primary);
-letter-spacing: -0.025em;
-}
-
-.close-modal{
-background: rgba(255, 255, 255, 0.1);
-backdrop-filter: blur(10px);
-border: 1px solid var(--glass-border);
-color: var(--text-secondary);
-font-size: 1.5rem;
-cursor: pointer;
-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-width: 3rem;
-height: 3rem;
-display: flex;
-align-items: center;
-justify-content: center;
-border-radius: 0.75rem;
-}
-
-.close-modal:hover{
-color: var(--primary);
-background: rgba(6, 182, 212, 0.1);
-transform: scale(1.1);
-}
-
-.modal-section{
-margin-bottom: 2rem;
-}
-
-.modal-section h3{
-font-size: 1.2rem;
-font-weight: 700;
-margin-bottom: 1rem;
-color: var(--primary);
-text-transform: uppercase;
-letter-spacing: 0.05em;
-font-size: 0.9rem;
-}
-
-.modal-description{
-opacity: 0.9;
-line-height: 1.7;
-margin-bottom: 1.5rem;
-color: var(--text-secondary);
-font-size: 1.05rem;
-}
-
-.modal-tags{
-display: flex;
-flex-wrap: wrap;
-gap: 0.75rem;
-margin-bottom: 1.5rem;
-}
-
-.modal-tag{
-background: rgba(6, 182, 212, 0.1);
-color: var(--primary);
-padding: 0.5rem 1.25rem;
-border-radius: 2rem;
-font-size: 0.9rem;
-font-weight: 600;
-border: 1px solid rgba(6, 182, 212, 0.2);
-transition: all 0.3s ease;
-}
-
-.modal-tag:hover {
-background: rgba(6, 182, 212, 0.2);
-transform: scale(1.05);
-}
-
-.modal-links{
-display: flex;
-gap: 1rem;
-flex-wrap: wrap;
-}
-
-.modal-link{
-display: inline-flex;
-align-items: center;
-gap: 0.75rem;
-padding: 0.875rem 1.75rem;
-background: linear-gradient(135deg, var(--primary), var(--secondary));
-color: white;
-text-decoration: none;
-border-radius: 0.75rem;
-font-weight: 600;
-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-border: 1px solid rgba(6, 182, 212, 0.2);
-position: relative;
-overflow: hidden;
-font-size: 0.95rem;
-}
-
-.modal-link::before {
-content: '';
-position: absolute;
-top: 0;
-left: -100%;
-width: 100%;
-height: 100%;
-background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-transition: left 0.5s ease;
-}
-
-.modal-link:hover::before {
-left: 100%;
-}
-
-.modal-link:hover{
-transform: translateY(-2px);
-box-shadow: 0 12px 30px rgba(6, 182, 212, 0.3);
-background: linear-gradient(135deg, var(--primary-hover), var(--secondary-hover));
-}
-
-/* ANIMATIONS */
-
-@keyframes fadeInDown{
-from{
-opacity: 0;
-transform: translateY(-40px);
-}
-to{
-opacity: 1;
-transform: translateY(0);
-}
-}
-
-@keyframes fadeInUp{
-from{
-opacity: 0;
-transform: translateY(40px);
-}
-to{
-opacity: 1;
-transform: translateY(0);
-}
-}
-
-@keyframes fadeIn{
-from{
-opacity: 0;
-}
-to{
-opacity: 1;
-}
-}
-
-@keyframes slideUp{
-from{
-opacity: 0;
-transform: translateY(40px) scale(0.95);
-}
-to{
-opacity: 1;
-transform: translateY(0) scale(1);
-}
-}
-
-@keyframes float{
-from{
-transform: translateY(0px) rotate(0deg);
-}
-to{
-transform: translateY(-20px) rotate(5deg);
-}
-}
-
-@keyframes gradientShift{
-0%, 100%{
-background-position: 0% 50%;
-}
-50%{
-background-position: 100% 50%;
-}
-}
-
-/* RESPONSIVE */
-
-@media (max-width: 768px){
-
-header{
-padding: 1.5rem 5%;
-flex-direction: column;
-gap: 1.5rem;
-}
-
-header .left-section {
-flex-direction: column;
-gap: 1rem;
-width: 100%;
-}
-
-header .right-section {
-position: absolute;
-top: 1.5rem;
-right: 5%;
-}
-
-nav{
-gap: 1rem;
-}
-
-nav a{
-padding: 0.5rem 1rem;
-font-size: 0.9rem;
-}
-
-.hero{
-padding: 2rem 1rem 4rem;
-}
-
-.hero h2{
-font-size: 2.5rem;
-margin-bottom: 1rem;
-}
-
-.hero p{
-font-size: 1rem;
-margin-bottom: 2rem;
-}
-
-.cta-buttons{
-flex-direction: column;
-align-items: center;
-gap: 1rem;
-}
-
-.cta-btn{
-width: 100%;
-max-width: 280px;
-padding: 1rem 2rem;
-font-size: 1rem;
-}
-
-section{
-padding: 4rem 5%;
-}
-
-h3.section-title{
-font-size: 2rem;
-margin-bottom: 3rem;
-}
-
-.projects-grid{
-grid-template-columns: 1fr;
-gap: 1.5rem;
-}
-
-.project{
-padding: 2rem;
-}
-
-.modal-content{
-padding: 2rem;
-width: 95%;
-border-radius: 1rem;
-}
-
-.contact-links{
-flex-direction: column;
-gap: 1rem;
-}
-
-.contact-link{
-padding: 1rem 1.5rem;
-}
-
-footer{
-padding: 2rem;
-margin-top: 4rem;
-}
-
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamza Naveed | Software Developer</title>
+    <meta name="description" content="Hamza Naveed - Computer Science student and software developer building cross-platform apps with Flutter, C++ and modern web technologies.">
+    <meta name="author" content="Hamza Naveed">
+    <link rel="icon" type="image/png" href="image/avatar.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Space+Mono:wght@400;700&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
+    <script>
+        window.contactData = Object.freeze({
+            email: 'hamza.naxeed@gmail.com',
+            phone: '+92 3054375465',
+            github: 'https://github.com/hamzanaxeed',
+            linkedin: 'https://www.linkedin.com/in/hamza-naveed-3aa01b289/'
+        });
 
-<header>
-<div class="left-section">
-<h1>Hamza Naveed</h1>
-<nav>
-<a href="#about">About</a>
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
-</nav>
-</div>
-<div class="right-section">
-<button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-<i class="fas fa-moon"></i>
-</button>
-</div>
-</header>
+        function showCopyFeedback(message) {
+            const feedback = document.createElement('div');
+            feedback.textContent = message;
+            feedback.style.position = 'fixed';
+            feedback.style.bottom = '20px';
+            feedback.style.left = '50%';
+            feedback.style.transform = 'translateX(-50%)';
+            feedback.style.padding = '12px 18px';
+            feedback.style.background = 'rgba(0,0,0,0.85)';
+            feedback.style.color = '#fff';
+            feedback.style.borderRadius = '999px';
+            feedback.style.fontSize = '0.95rem';
+            feedback.style.zIndex = '9999';
+            feedback.style.boxShadow = '0 8px 24px rgba(0,0,0,0.25)';
+            feedback.style.opacity = '0';
+            feedback.style.transition = 'opacity 180ms ease';
+            document.body.appendChild(feedback);
+            requestAnimationFrame(() => feedback.style.opacity = '1');
+            setTimeout(() => {
+                feedback.style.opacity = '0';
+                feedback.addEventListener('transitionend', () => feedback.remove(), { once: true });
+            }, 1500);
+        }
 
-<section class="hero">
-<div class="hero-content">
-<h2>Hi, I'm <span>Hamza Naveed</span></h2>
-<p>Computer Science student passionate about building scalable software, systems programming, and cross-platform applications.</p>
-<div class="cta-buttons">
-<a href="#projects" class="cta-btn btn-primary">View My Work</a>
-<a href="#contact" class="cta-btn btn-secondary">Get In Touch</a>
-</div>
-</div>
-</section>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('[data-contact]').forEach(anchor => {
+                const key = anchor.dataset.contact;
+                const value = window.contactData[key];
+                if (!value) return;
 
-<section id="about">
-<h3 class="section-title">About Me</h3>
-<div class="about-content">
-<p>
-I am a Computer Science student and software developer with strong experience
-in building real-world applications using Flutter, C++, and modern web technologies.
-I enjoy solving complex engineering problems and designing scalable systems.
-
-My goal is to work on impactful software products and contribute to global
-technology companies where I can build systems used by millions of users.
-<p>My approach to development emphasizes clean code, performance optimization, and user-centric design. I'm always eager to learn new technologies and tackle challenging problems.</p>
-</div>
-</section>
-
-<section id="skills">
-<h3 class="section-title">Tech Stack</h3>
-
-<div class="skills">
-
-<div class="skill">C++</div>
-<div class="skill">Flutter</div>
-<div class="skill">Firebase</div>
-<div class="skill">React</div>
-<div class="skill">Node.js</div>
-<div class="skill">Express</div>
-<div class="skill">MS SQL</div>
-<div class="skill">REST APIs</div>
-<div class="skill">WebSockets</div>
-<div class="skill">Git and Github</div>
-
-</div>
-</section>
-
-<section id="projects">
-<h3 class="section-title">Featured Projects</h3>
-<div class="projects-grid">
- 
-<div class="project" onclick="openProjectModal('finance-modal')">
-    <div class="project-icon"><i class="fas fa-wallet"></i></div>
-    <h4>Finance Master</h4>
-    <p>All-in-one offline finance manager: accounts, stocks, dividends, encrypted backups, and biometric protection.</p>
-    <div class="project-tag">Flutter</div>
-    <a href="#" class="project-view-btn">View Details →</a>
-</div>
-
-<div class="project" onclick="openProjectModal('remotex-modal')">
-    <div class="project-icon"><i class="fas fa-wifi"></i></div>
-    <h4>RemoteX</h4>
-    <p>Remote device control platform</p>
-<div class="project-tag">Flutter</div>
-<div class="project-tag">C++</div>
-<div class="project-tag">Node Js</div>
-    <a href="#" class="project-view-btn">View Details →</a>
-</div>
-
-<div class="project" onclick="openProjectModal('restaurant-modal')">
-<div class="project-icon"><i class="fas fa-utensils"></i></div>
-<h4>Restaurant App</h4>
-<p>Full food ordering system</p>
-<div class="project-tag">Flutter</div>
-<div class="project-tag">Firebase</div>
-<a href="#" class="project-view-btn">View Details →</a>
-</div>
-
-<div class="project" onclick="openProjectModal('driver-modal')">
-<div class="project-icon"><i class="fas fa-truck"></i></div>
-<h4>Driver Delivery App</h4>
-<p>Driver management system</p>
-<div class="project-tag">Flutter</div>
-<div class="project-tag">Real-time</div>
-<a href="#" class="project-view-btn">View Details →</a>
-</div>
-
-<div class="project" onclick="openProjectModal('papers-modal')">
-<div class="project-icon"><i class="fas fa-book"></i></div>
-<h4>Fast Past Papers</h4>
-<p>Student resource app</p>
-<div class="project-tag">Flutter</div>
-<div class="project-tag">Firebase</div>
-<a href="#" class="project-view-btn">View Details →</a>
-</div>
-
-<div class="project" onclick="openProjectModal('ecommerce-modal')">
-<div class="project-icon"><i class="fas fa-shopping-cart"></i></div>
-<h4>UPS E-Commerce Platform</h4>
-<p>Online platform for sellers</p>
-<div class="project-tag">Full Stack</div>
-<div class="project-tag">Firebase</div>
-<a href="#" class="project-view-btn">View Details →</a>
-</div>
-
-<div class="project" onclick="openProjectModal('quickmart-modal')">
-<div class="project-icon"><i class="fas fa-store"></i></div>
-<h4>Quick Mart</h4>
-<p>Store management system</p>
-<div class="project-tag">React</div>
-<div class="project-tag">MS SQL</div>
-<a href="#" class="project-view-btn">View Details →</a>
-</div>
-
-<div class="project" onclick="openProjectModal('moneymingle-modal')">
-<div class="project-icon"><i class="fas fa-university"></i></div>
-<h4>Money Mingle: A Bank</h4>
-<p>Banking management system</p>
-<div class="project-tag">C++</div>
-<div class="project-tag">OOP</div>
-<a href="#" class="project-view-btn">View Details →</a>
-</div>
-
-<div class="project" onclick="openProjectModal('flappy-asm-modal')">
-<div class="project-icon"><i class="fas fa-microchip"></i></div>
-<h4>Flappy Bird (Assembly)</h4>
-<p>Low-level graphics project</p>
-<div class="project-tag">Assembly</div>
-<div class="project-tag">Graphics</div>
-<a href="#" class="project-view-btn">View Details →</a>
-</div>
-
-<div class="project" onclick="openProjectModal('flappy-cpp-modal')">
-<div class="project-icon"><i class="fas fa-gamepad"></i></div>
-<h4>Flappy Bird (C++)</h4>
-<p>Game development project</p>
-<div class="project-tag">C++</div>
-<div class="project-tag">SFML</div>
-<a href="#" class="project-view-btn">View Details →</a>
-</div>
-
-</div>
-</section>
-
-<section id="contact" class="contact">
-<h3 class="section-title">Let's Connect</h3>
-<div class="contact-content">
-<p>I'm always interested in hearing about new projects and opportunities. Feel free to reach out!</p>
-<div class="contact-links">
-<a href="https://mail.google.com/mail/?view=cm&fs=1&to=hamza.naxeed@gmail.com" target="_blank" class="contact-link">
-<i class="fas fa-envelope"></i>
-Email Me
-</a>
-<a href="https://www.linkedin.com/in/hamza-naveed-3aa01b289?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B%2BfUxT3MNQbqwdZ%2FcKmMCNQ%3D%3D" target="_blank" class="contact-link">
-<i class="fab fa-linkedin"></i>
-LinkedIn
-</a>
-</div>
-</div>
-</section>
-
-<footer>
-<p>© 2026 Hamza Naveed. All rights reserved.</p>
-</footer>
-
-<!-- PROJECT MODALS -->
-
-<!-- Finance Master Modal -->
-<div class="modal" id="finance-modal">
-<div class="modal-content">
-<div class="modal-header">
-<div>
-<h2>Finance Master</h2>
-</div>
-<button class="close-modal" onclick="closeProjectModal('finance-modal')">✕</button>
-</div>
-
-<div class="modal-section">
-<h3>Project Overview</h3>
-<p class="modal-description">Finance Master is a comprehensive offline finance manager that helps users track bank accounts, wallets, transactions, stocks (with automatic PSX price updates), dividends, goals, secure notes, and saved passwords. It includes encrypted backups and fingerprint protection for privacy.</p>
-</div>
-
-<div class="modal-section">
-<h3>Key Features</h3>
-<ul style="margin-left: 20px; line-height: 2;">
-<li>Track multiple bank accounts and wallets with analytics</li>
-<li>Transaction history and income/expense breakdown</li>
-<li>Stock portfolio tracking with timeline and P/L per asset</li>
-<li>Automatic price updates for Pakistan Stock Exchange (PSX)</li>
-<li>Dividend tracking and reporting</li>
-<li>Encrypted offline backups and fingerprint protection</li>
-<li>Secure local password vault and financial notes</li>
-<li>Goal tracking and financial planning</li>
-</ul>
-</div>
-
-<div class="modal-section">
-<h3>Technologies Used</h3>
-<div class="modal-tags">
-<span class="modal-tag">Flutter</span>
-<span class="modal-tag">SQFLite</span>
-<span class="modal-tag">Local Encryption</span>
-<span class="modal-tag">PSX API</span>
-<span class="modal-tag">Biometrics</span>
-</div>
-</div>
-
-<div class="modal-section">
-    <div class="modal-links">
-        <a href="https://www.linkedin.com/posts/hamza-naveed-_one-of-the-most-difficult-task-in-investment-ugcPost-7469328843904827393-c-Ui/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEXyrXIBOPznvhUFb04dNM7ub7d0DOSHCps" class="modal-link" target="_blank">
-            <i class="fab fa-linkedin"></i> View LinkedIn
-        </a>
+                if (key === 'email') {
+                    // open Gmail compose addressed to me
+                    anchor.href = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(value)}`;
+                    anchor.target = '_blank';
+                    anchor.rel = 'noopener';
+                } else if (key === 'phone') {
+                    anchor.href = '#';
+                    anchor.addEventListener('click', event => {
+                        event.preventDefault();
+                        navigator.clipboard.writeText(value).then(() => {
+                            showCopyFeedback(`${key === 'email' ? 'Email' : 'Phone'} copied to clipboard`);
+                        }).catch(() => {
+                            showCopyFeedback('Copied to clipboard');
+                        });
+                    });
+                } else {
+                    anchor.href = value;
+                }
+            });
+        });
+    </script>
+    <!-- Loading Screen -->
+    <div class="loader-overlay">
+        <div class="loader-shapes">
+            <div class="loader-shape-svg loader-shape-1">
+                <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="6" y="6" width="88" height="88" rx="8" fill="#66d9ef" stroke="#000" stroke-width="4"/>
+                    <rect x="3" y="3" width="88" height="88" rx="8" fill="#66d9ef" stroke="#000" stroke-width="4"/>
+                    <path d="M35 40 L20 50 L35 60" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M65 40 L80 50 L65 60" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line x1="55" y1="35" x2="45" y2="65" stroke="#000" stroke-width="5" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="loader-shape-svg loader-shape-2">
+                <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="6" y="6" width="88" height="88" rx="8" fill="#ffd93d" stroke="#000" stroke-width="4"/>
+                    <rect x="3" y="3" width="88" height="88" rx="8" fill="#ffd93d" stroke="#000" stroke-width="4"/>
+                    <path d="M25 35 L40 50 L25 65" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line x1="50" y1="65" x2="75" y2="65" stroke="#000" stroke-width="5" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="loader-shape-svg loader-shape-3">
+                <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="6" y="6" width="88" height="88" rx="8" fill="#a8e6cf" stroke="#000" stroke-width="4"/>
+                    <rect x="3" y="3" width="88" height="88" rx="8" fill="#a8e6cf" stroke="#000" stroke-width="4"/>
+                    <rect x="20" y="20" width="60" height="60" rx="3" fill="#ffd93d" stroke="#000" stroke-width="4"/>
+                    <rect x="30" y="20" width="40" height="20" fill="#66d9ef" stroke="#000" stroke-width="3"/>
+                    <rect x="35" y="55" width="30" height="15" rx="2" fill="#000"/>
+                    <circle cx="50" cy="35" r="3" fill="#000"/>
+                </svg>
+            </div>
+        </div>
+        <div class="loader-wrapper">
+            <div class="loader-letter">H</div>
+            <div class="loader-letter">N</div>
+        </div>
+        <div class="loader-progress-bar">
+            <div class="loader-progress-fill"></div>
+        </div>
     </div>
-</div>
-</div>
-</div>
-
-<!-- RemoteX Modal -->
-<div class="modal" id="remotex-modal">
-<div class="modal-content">
-<div class="modal-header">
-<div>
-<h2>RemoteX</h2>
-</div>
-<button class="close-modal" onclick="closeProjectModal('remotex-modal')">✕</button>
-</div>
-
-<div class="modal-section">
-<h3>Project Overview</h3>
-<p class="modal-description">RemoteX is an innovative remote desktop control system currently . It enables seamless control of devices across different platforms with a focus on intuitive user experience and robust security.</p>
-</div>
-
-<div class="modal-section">
-<h3>Key Features</h3>
-<ul style="margin-left: 20px; line-height: 2;">
-<li>Cross-platform device connectivity</li>
-<li>Real-time command execution</li>
-<li>Encrypted secure communication</li>
-<li>Multi-device management</li>
-<li>Responsive UI/UX</li>
-</ul>
-</div>
-
-<div class="modal-section">
-<h3>Technologies Used</h3>
-<div class="modal-tags">
-<span class="modal-tag">C++</span>
-<span class="modal-tag">Flutter</span>
-<span class="modal-tag">Node JS</span>
-<span class="modal-tag">Supabase</span>
-<span class="modal-tag">Network Programming</span>
-</div>
-</div>
-
-<div class="modal-section">
-    <div class="modal-links">
-        <a href="https://www.linkedin.com/in/hamza-naveed-3aa01b289/" class="modal-link" target="_blank">
-            <i class="fab fa-linkedin"></i> View LinkedIn
-        </a>
+    <div class="page-wrapper">
+    <div class="progress-bar-container">
+        <div class="progress-bar-fill"></div>
+        <div class="progress-checkpoints">
+            <div class="checkpoint" data-section="hero">
+                <div class="checkpoint-dot"></div>
+                <span class="checkpoint-label">Home</span>
+            </div>
+            <div class="checkpoint" data-section="about">
+                <div class="checkpoint-dot"></div>
+                <span class="checkpoint-label">About</span>
+            </div>
+            <div class="checkpoint" data-section="experience">
+                <div class="checkpoint-dot"></div>
+                <span class="checkpoint-label">Journey</span>
+            </div>
+            <div class="checkpoint" data-section="skills">
+                <div class="checkpoint-dot"></div>
+                <span class="checkpoint-label">Skills</span>
+            </div>
+            <div class="checkpoint" data-section="contact">
+                <div class="checkpoint-dot"></div>
+                <span class="checkpoint-label">Contact</span>
+            </div>
+        </div>
     </div>
-</div>
-</div>
-</div>
+    <nav class="navbar">
+        <div class="nav-content">
+                <a href="#" class="nav-brand">HN</a>
+            <div class="nav-right">
+                <a href="#hero" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Journey</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-cta">Get in Touch!</a>
+                <button id="theme-toggle" class="theme-toggle-nav" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
 
-<!-- Restaurant App Modal -->
-<div class="modal" id="restaurant-modal">
-<div class="modal-content">
-<div class="modal-header">
-<h2>Restaurant App</h2>
-<button class="close-modal" onclick="closeProjectModal('restaurant-modal')">✕</button>
-</div>
-<div class="modal-section">
-    <h3>Project Overview</h3>
-    <p class="modal-description">
-        A complete restaurant ordering mobile app developed during my internship. 
-        Customers can browse menus, place orders, track deliveries, and manage their accounts.
-        The app focuses on usability, fast performance, and smooth interaction between customer and restaurant.
-    </p>
-</div>
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-left">
+                <p class="hero-greeting" id="hero-greeting">Hi there! 👋</p>
+                <h1 class="hero-name">I'm Hamza Naveed.</h1>
+                <p class="hero-description">
+                    Computer Science student passionate about building scalable software, systems programming, and cross-platform applications. I build real-world apps with Flutter, C++, and modern web technologies.
+                </p>
+                <div class="hero-social">
+                    <a href="#" target="_blank" class="social-btn" data-contact="github" aria-label="GitHub profile">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" target="_blank" class="social-btn" data-contact="linkedin" aria-label="LinkedIn profile">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="social-btn" data-contact="email" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                <div class="hero-cta-container">
+                    <a href="#contact" class="btn-cta">Get in Touch!</a>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-image-wrapper">
+                    <div class="tape-sticker"></div>
+                    <img src="image/avatar.png" alt="Hamza Naveed" class="hero-photo" width="400" height="400" fetchpriority="high">
+                    <div class="deco-code">
+                        <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="6" y="6" width="88" height="88" rx="8" fill="#66d9ef" stroke="#000" stroke-width="4"/>
+                            <rect x="3" y="3" width="88" height="88" rx="8" fill="#66d9ef" stroke="#000" stroke-width="4"/>
+                            <path d="M35 40 L20 50 L35 60" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M65 40 L80 50 L65 60" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="55" y1="35" x2="45" y2="65" stroke="#000" stroke-width="5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="deco-terminal">
+                        <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="6" y="6" width="88" height="88" rx="8" fill="#ffd93d" stroke="#000" stroke-width="4"/>
+                            <rect x="3" y="3" width="88" height="88" rx="8" fill="#ffd93d" stroke="#000" stroke-width="4"/>
+                            <path d="M25 35 L40 50 L25 65" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="50" y1="65" x2="75" y2="65" stroke="#000" stroke-width="5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="deco-floppy">
+                        <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="6" y="6" width="88" height="88" rx="8" fill="#a8e6cf" stroke="#000" stroke-width="4"/>
+                            <rect x="3" y="3" width="88" height="88" rx="8" fill="#a8e6cf" stroke="#000" stroke-width="4"/>
+                            <rect x="20" y="20" width="60" height="60" rx="3" fill="#ffd93d" stroke="#000" stroke-width="4"/>
+                            <rect x="30" y="20" width="40" height="20" fill="#66d9ef" stroke="#000" stroke-width="3"/>
+                            <rect x="35" y="55" width="30" height="15" rx="2" fill="#000"/>
+                            <circle cx="50" cy="35" r="3" fill="#000"/>
+                        </svg>
+                    </div>
+                    <div class="deco-label">Software Developer</div>
+                </div>
+            </div>
+        </div>
+        <div class="tech-badges">
+            <span class="tech-badge"><i class="fas fa-mobile-alt"></i> Flutter</span>
+            <span class="tech-badge"><i class="fas fa-code"></i> C++</span>
+            <span class="tech-badge"><i class="fab fa-react"></i> React</span>
+            <span class="tech-badge"><i class="fab fa-node-js"></i> Node.js</span>
+            <span class="tech-badge"><i class="fas fa-fire"></i> Firebase</span>
+            <span class="tech-badge"><i class="fab fa-git-alt"></i> Git</span>
+        </div>
+    </section>
 
-<div class="modal-section">
-    <h3>Key Features</h3>
-    <ul style="margin-left: 20px; line-height: 2;">
-        <li>Browse restaurant menus with categories and item details</li>
-        <li>Place and customize orders directly from the app</li>
-        <li>Track order status and delivery progress in real-time</li>
-        <li>Manage account information and view order history</li>
-        <li>Push notifications for order updates and promotions</li>
-    </ul>
-</div>
-
-<div class="modal-section">
-<h3>Technologies Used</h3>
-<div class="modal-tags">
-<span class="modal-tag">Flutter</span>
-<span class="modal-tag">Firebase</span>
-</div>
-</div>
-
-<div class="modal-section">
-    <h3>My Contributions</h3>
-    <p class="modal-description">
-        Developed the entire frontend of the restaurant ordering application from scratch.  
-        Implemented real-time order and delivery tracking using sockets for live location updates of delivery drivers.  
-        Built a complete cart management system, and optimized the app for smooth performance and seamless user interactions.
-    </p>
-</div>
-
-<!--add linkedin link here-->>
-<div class="modal-section">
-    <div class="modal-links">
-        <a href="https://www.linkedin.com/in/hamza-naveed-3aa01b289/" class="modal-link" target="_blank">
-            <i class="fab fa-linkedin"></i> View LinkedIn
-        </a>
+    <div class="paper-tear paper-tear-top">
+        <svg width="100%" height="30" viewBox="0 0 1440 30" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,0 L0,15 Q10,5 20,15 T40,15 Q50,5 60,15 T80,15 Q90,20 100,15 T120,15 Q130,10 140,15 T160,15 Q170,5 180,15 T200,15 Q210,20 220,15 T240,15 Q250,8 260,15 T280,15 Q290,18 300,15 T320,15 Q330,5 340,15 T360,15 Q370,12 380,15 T400,15 Q410,20 420,15 T440,15 Q450,6 460,15 T480,15 Q490,16 500,15 T520,15 Q530,8 540,15 T560,15 Q570,20 580,15 T600,15 Q610,10 620,15 T640,15 Q650,5 660,15 T680,15 Q690,18 700,15 T720,15 Q730,12 740,15 T760,15 Q770,7 780,15 T800,15 Q810,20 820,15 T840,15 Q850,9 860,15 T880,15 Q890,14 900,15 T920,15 Q930,6 940,15 T960,15 Q970,19 980,15 T1000,15 Q1010,11 1020,15 T1040,15 Q1050,5 1060,15 T1080,15 Q1090,17 1100,15 T1120,15 Q1130,8 1140,15 T1160,15 Q1170,13 1180,15 T1200,15 Q1210,20 1220,15 T1240,15 Q1250,7 1260,15 T1280,15 Q1290,16 1300,15 T1320,15 Q1330,10 1340,15 T1360,15 Q1370,5 1380,15 T1400,15 Q1410,18 1420,15 T1440,15 L1440,0 Z"
+            fill="#ffffff" stroke="none"/>
+            <path d="M0,30 L0,15 Q10,5 20,15 T40,15 Q50,5 60,15 T80,15 Q90,20 100,15 T120,15 Q130,10 140,15 T160,15 Q170,5 180,15 T200,15 Q210,20 220,15 T240,15 Q250,8 260,15 T280,15 Q290,18 300,15 T320,15 Q330,5 340,15 T360,15 Q370,12 380,15 T400,15 Q410,20 420,15 T440,15 Q450,6 460,15 T480,15 Q490,16 500,15 T520,15 Q530,8 540,15 T560,15 Q570,20 580,15 T600,15 Q610,10 620,15 T640,15 Q650,5 660,15 T680,15 Q690,18 700,15 T720,15 Q730,12 740,15 T760,15 Q770,7 780,15 T800,15 Q810,20 820,15 T840,15 Q850,9 860,15 T880,15 Q890,14 900,15 T920,15 Q930,6 940,15 T960,15 Q970,19 980,15 T1000,15 Q1010,11 1020,15 T1040,15 Q1050,5 1060,15 T1080,15 Q1090,17 1100,15 T1120,15 Q1130,8 1140,15 T1160,15 Q1170,13 1180,15 T1200,15 Q1210,20 1220,15 T1240,15 Q1250,7 1260,15 T1280,15 Q1290,16 1300,15 T1320,15 Q1330,10 1340,15 T1360,15 Q1370,5 1380,15 T1400,15 Q1410,18 1420,15 T1440,15 L1440,30 Z"
+            fill="#d0d0d0" stroke="none"/>
+            <path d="M0,15 Q10,5 20,15 T40,15 Q50,5 60,15 T80,15 Q90,20 100,15 T120,15 Q130,10 140,15 T160,15 Q170,5 180,15 T200,15 Q210,20 220,15 T240,15 Q250,8 260,15 T280,15 Q290,18 300,15 T320,15 Q330,5 340,15 T360,15 Q370,12 380,15 T400,15 Q410,20 420,15 T440,15 Q450,6 460,15 T480,15 Q490,16 500,15 T520,15 Q530,8 540,15 T560,15 Q570,20 580,15 T600,15 Q610,10 620,15 T640,15 Q650,5 660,15 T680,15 Q690,18 700,15 T720,15 Q730,12 740,15 T760,15 Q770,7 780,15 T800,15 Q810,20 820,15 T840,15 Q850,9 860,15 T880,15 Q890,14 900,15 T920,15 Q930,6 940,15 T960,15 Q970,19 980,15 T1000,15 Q1010,11 1020,15 T1040,15 Q1050,5 1060,15 T1080,15 Q1090,17 1100,15 T1120,15 Q1130,8 1140,15 T1160,15 Q1170,13 1180,15 T1200,15 Q1210,20 1220,15 T1240,15 Q1250,7 1260,15 T1280,15 Q1290,16 1300,15 T1320,15 Q1330,10 1340,15 T1360,15 Q1370,5 1380,15 T1400,15 Q1410,18 1420,15 T1440,15"
+            fill="none" stroke="var(--border)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
     </div>
-</div>
-</div>
-</div>
-</div>
 
-<!-- Driver Delivery Modal -->
-<div class="modal" id="driver-modal">
-<div class="modal-content">
-<div class="modal-header">
-<h2>Driver Delivery App</h2>
-<button class="close-modal" onclick="closeProjectModal('driver-modal')">✕</button>
-</div>
+    <div class="page-gap"></div>
 
-<div class="modal-section">
-<h3>Project Overview</h3>
-<p class="modal-description">A specialized mobile application for delivery drivers to manage orders, track routes, and communicate with customers in real-time. Built with performance and battery efficiency in mind.</p>
-</div>
-
-<div class="modal-section">
-<h3>Key Features</h3>
-<ul style="margin-left: 20px; line-height: 2;">
-<li>Real-time GPS tracking and navigation</li>
-<li>Order management dashboard</li>
-<li>Customer communication system</li>
-<li>Route optimization</li>
-<li>Delivery confirmation with photos</li>
-</ul>
-</div>
-
-<div class="modal-section">
-<h3>Technologies Used</h3>
-<div class="modal-tags">
-<span class="modal-tag">Flutter</span>
-<span class="modal-tag">Firebase</span>
-<span class="modal-tag">Google Maps API</span>
-<span class="modal-tag">Real-time Database</span>
-<span class="modal-tag">Sockets</span>
-</div>
-</div>
-
-<!--add linkedin link here-->>
-<div class="modal-section">
-    <div class="modal-links">
-        <a href="https://www.linkedin.com/in/hamza-naveed-3aa01b289/" class="modal-link" target="_blank">
-            <i class="fab fa-linkedin"></i> View LinkedIn
-        </a>
+    <div class="paper-tear paper-tear-bottom">
+        <svg width="100%" height="30" viewBox="0 0 1440 30" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,0 L0,15 Q10,5 20,15 T40,15 Q50,5 60,15 T80,15 Q90,20 100,15 T120,15 Q130,10 140,15 T160,15 Q170,5 180,15 T200,15 Q210,20 220,15 T240,15 Q250,8 260,15 T280,15 Q290,18 300,15 T320,15 Q330,5 340,15 T360,15 Q370,12 380,15 T400,15 Q410,20 420,15 T440,15 Q450,6 460,15 T480,15 Q490,16 500,15 T520,15 Q530,8 540,15 T560,15 Q570,20 580,15 T600,15 Q610,10 620,15 T640,15 Q650,5 660,15 T680,15 Q690,18 700,15 T720,15 Q730,12 740,15 T760,15 Q770,7 780,15 T800,15 Q810,20 820,15 T840,15 Q850,9 860,15 T880,15 Q890,14 900,15 T920,15 Q930,6 940,15 T960,15 Q970,19 980,15 T1000,15 Q1010,11 1020,15 T1040,15 Q1050,5 1060,15 T1080,15 Q1090,17 1100,15 T1120,15 Q1130,8 1140,15 T1160,15 Q1170,13 1180,15 T1200,15 Q1210,20 1220,15 T1240,15 Q1250,7 1260,15 T1280,15 Q1290,16 1300,15 T1320,15 Q1330,10 1340,15 T1360,15 Q1370,5 1380,15 T1400,15 Q1410,18 1420,15 T1440,15 L1440,0 Z"
+            fill="#d0d0d0" stroke="none"/>
+            <path d="M0,30 L0,15 Q10,5 20,15 T40,15 Q50,5 60,15 T80,15 Q90,20 100,15 T120,15 Q130,10 140,15 T160,15 Q170,5 180,15 T200,15 Q210,20 220,15 T240,15 Q250,8 260,15 T280,15 Q290,18 300,15 T320,15 Q330,5 340,15 T360,15 Q370,12 380,15 T400,15 Q410,20 420,15 T440,15 Q450,6 460,15 T480,15 Q490,16 500,15 T520,15 Q530,8 540,15 T560,15 Q570,20 580,15 T600,15 Q610,10 620,15 T640,15 Q650,5 660,15 T680,15 Q690,18 700,15 T720,15 Q730,12 740,15 T760,15 Q770,7 780,15 T800,15 Q810,20 820,15 T840,15 Q850,9 860,15 T880,15 Q890,14 900,15 T920,15 Q930,6 940,15 T960,15 Q970,19 980,15 T1000,15 Q1010,11 1020,15 T1040,15 Q1050,5 1060,15 T1080,15 Q1090,17 1100,15 T1120,15 Q1130,8 1140,15 T1160,15 Q1170,13 1180,15 T1200,15 Q1210,20 1220,15 T1240,15 Q1250,7 1260,15 T1280,15 Q1290,16 1300,15 T1320,15 Q1330,10 1340,15 T1360,15 Q1370,5 1380,15 T1400,15 Q1410,18 1420,15 T1440,15 L1440,30 Z"
+            fill="#ffffff" stroke="none"/>
+            <path d="M0,15 Q10,5 20,15 T40,15 Q50,5 60,15 T80,15 Q90,20 100,15 T120,15 Q130,10 140,15 T160,15 Q170,5 180,15 T200,15 Q210,20 220,15 T240,15 Q250,8 260,15 T280,15 Q290,18 300,15 T320,15 Q330,5 340,15 T360,15 Q370,12 380,15 T400,15 Q410,20 420,15 T440,15 Q450,6 460,15 T480,15 Q490,16 500,15 T520,15 Q530,8 540,15 T560,15 Q570,20 580,15 T600,15 Q610,10 620,15 T640,15 Q650,5 660,15 T680,15 Q690,18 700,15 T720,15 Q730,12 740,15 T760,15 Q770,7 780,15 T800,15 Q810,20 820,15 T840,15 Q850,9 860,15 T880,15 Q890,14 900,15 T920,15 Q930,6 940,15 T960,15 Q970,19 980,15 T1000,15 Q1010,11 1020,15 T1040,15 Q1050,5 1060,15 T1080,15 Q1090,17 1100,15 T1120,15 Q1130,8 1140,15 T1160,15 Q1170,13 1180,15 T1200,15 Q1210,20 1220,15 T1240,15 Q1250,7 1260,15 T1280,15 Q1290,16 1300,15 T1320,15 Q1330,10 1340,15 T1360,15 Q1370,5 1380,15 T1400,15 Q1410,18 1420,15 T1440,15"
+            fill="none" stroke="var(--border)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
     </div>
-</div>
 
-</div>
-</div>
-</div>
+    <div class="tear-tape-sticker"></div>
 
-<!-- Fast Past Papers Modal -->
-<div class="modal" id="papers-modal">
-<div class="modal-content">
-<div class="modal-header">
-<h2>Fast Past Papers</h2>
-<button class="close-modal" onclick="closeProjectModal('papers-modal')">✕</button>
-</div>
+    <div class="container">
 
-<div class="modal-section">
-<h3>Project Overview</h3>
-<p class="modal-description">A comprehensive student resource application for accessing and studying past exam papers and Academic resources. Built to help students prepare effectively with organized content .</p>
-</div>
+        <section class="section" id="about">
+            <h2 class="section-title">ABOUT</h2>
+            <div class="card">
+                <p class="text">
+                    I'm a <span class="highlight highlight-yellow">Computer Science student</span> and <span class="highlight highlight-cyan">software developer</span> with strong experience building real-world applications using <span class="highlight highlight-green">Flutter</span>, <span class="highlight highlight-pink">C++</span>, and <span class="highlight highlight-yellow">modern web technologies</span>.
+                </p>
+                <p class="text">
+                    I enjoy <span class="highlight highlight-cyan">solving complex engineering problems</span> and designing <span class="highlight highlight-green">scalable systems</span>. My approach emphasizes <span class="highlight highlight-pink">clean code</span>, <span class="highlight highlight-yellow">performance optimization</span>, and <span class="highlight highlight-cyan">user-centric design</span>.
+                </p>
+                <p class="text">
+                    My goal is to work on <span class="highlight highlight-green">impactful software products</span> and contribute to <span class="highlight highlight-pink">global technology companies</span> where I can build systems used by <span class="highlight highlight-yellow">millions of users</span>. I'm always eager to <span class="highlight highlight-cyan">learn new technologies</span> and tackle challenging problems.
+                </p>
+            </div>
+        </section>
 
-<div class="modal-section">
-<h3>Key Features</h3>
-<ul style="margin-left: 20px; line-height: 2;">
-<li>Extensive past papers database sorted by subject and year</li>
-<li>Multiple subject support</li>
-<li>Answer key references</li>
-<li>Bookmarking and favorites</li>
-<li>Offline viewing capability</li>
-<li>Calculate SGPA and CGPA</li>
-<li>In app feedback and log management</li>
-<li>Different roles for users (Admin,editor,user)</li>
-</ul>
-</div>
+        <section class="section journey-section" id="experience">
+            <h2 class="section-title-center">My Journey</h2>
+            <div class="journey-container">
+                <div class="journey-timeline">
+                    <h3 class="timeline-header">Journey Timeline</h3>
+            <div class="timeline-list">
+                <div class="timeline-item-flat" id="exp-1">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content-flat">
+                        <h4 class="timeline-title">Flutter Developer Intern</h4>
+                        <p class="timeline-date">Internship</p>
+                        <p class="timeline-description">
+                            Built the entire frontend of a restaurant ordering app from scratch, with a full cart system and real-time delivery tracking via sockets.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item-flat" id="exp-2">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content-flat">
+                        <h4 class="timeline-title">Backend Developer – Electrify</h4>
+                        <p class="timeline-date">Project</p>
+                        <p class="timeline-description">
+                            Designed and implemented the Node.js / Express REST APIs for order management, user operations and seller interactions.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item-flat" id="exp-3">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content-flat">
+                        <h4 class="timeline-title">Database Lab – Quick Mart</h4>
+                        <p class="timeline-date">Coursework</p>
+                        <p class="timeline-description">
+                            Designed the relational schema in MS SQL Server and connected it to a React interface for inventory, orders and customers.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item-flat" id="exp-4">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content-flat">
+                        <h4 class="timeline-title">Computer Science Student</h4>
+                        <p class="timeline-date">Ongoing</p>
+                        <p class="timeline-description">
+                            Building cross-platform apps, systems-level projects in C++ and Assembly, and tools that help other students.
+                        </p>
+                    </div>
+                </div>
+            </div>
+                </div>
+                <div class="journey-timeline-back">
+                    <svg class="treasure-map-svg" viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Aged paper background -->
+                        <rect width="400" height="600" fill="#f4e7d7"/>
 
-<div class="modal-section">
-<h3>Technologies Used</h3>
-<div class="modal-tags">
-<span class="modal-tag">Flutter</span>
-<span class="modal-tag">Firebase</span>
-<span class="modal-tag">Supabase</span>
-<span class="modal-tag">PDF Rendering</span>
-<span class="modal-tag">Local Caching</span>
-</div>
-</div>
+                        <!-- Compass Rose -->
+                        <g transform="translate(320, 80)">
+                            <circle cx="0" cy="0" r="35" fill="none" stroke="#8B4513" stroke-width="2"/>
+                            <circle cx="0" cy="0" r="30" fill="none" stroke="#8B4513" stroke-width="1"/>
+                            <!-- N -->
+                            <polygon points="0,-30 5,-10 -5,-10" fill="#D2691E"/>
+                            <!-- S -->
+                            <polygon points="0,30 5,10 -5,10" fill="#8B4513"/>
+                            <!-- E -->
+                            <polygon points="30,0 10,5 10,-5" fill="#8B4513"/>
+                            <!-- W -->
+                            <polygon points="-30,0 -10,5 -10,-5" fill="#8B4513"/>
+                            <text x="0" y="-40" text-anchor="middle" font-size="16" font-weight="bold" fill="#8B4513">N</text>
+                        </g>
 
-<div class="modal-section">
-<h3>Impact</h3>
-<p class="modal-description">Successfully helped 100+ students with exam preparation, demonstrating the value of accessible educational resources.</p>
-</div>
+                        <!-- Dotted path route -->
+                        <path d="M 80,150 Q 120,200 100,250 T 140,350 Q 160,400 200,420"
+                              stroke="#D2691E" stroke-width="3" fill="none"
+                              stroke-dasharray="8,8" stroke-linecap="round"/>
 
-<div class="modal-section">
-    <div class="modal-links">
-        <a href="https://www.linkedin.com/posts/hamza-naveed-3aa01b289_past-paper-academic-resource-app-activity-7361270421867872256-mvNi?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEXyrXIBOPznvhUFb04dNM7ub7d0DOSHCps" class="modal-link" target="_blank">
-            <i class="fab fa-linkedin"></i> View LinkedIn
-        </a>
+                        <!-- Location markers -->
+                        <circle cx="80" cy="150" r="8" fill="#8B4513" stroke="#654321" stroke-width="2"/>
+                        <circle cx="100" cy="250" r="8" fill="#8B4513" stroke="#654321" stroke-width="2"/>
+                        <circle cx="140" cy="350" r="8" fill="#8B4513" stroke="#654321" stroke-width="2"/>
+
+                        <!-- X marks the spot -->
+                        <g transform="translate(200, 420)">
+                            <circle cx="0" cy="0" r="25" fill="#FFD700" opacity="0.3"/>
+                            <line x1="-15" y1="-15" x2="15" y2="15" stroke="#DC143C" stroke-width="4" stroke-linecap="round"/>
+                            <line x1="15" y1="-15" x2="-15" y2="15" stroke="#DC143C" stroke-width="4" stroke-linecap="round"/>
+                        </g>
+
+                        <!-- Mountains -->
+                        <g opacity="0.4">
+                            <polygon points="250,200 270,150 290,200" fill="#8B4513"/>
+                            <polygon points="280,200 300,160 320,200" fill="#A0522D"/>
+                            <polygon points="220,220 245,170 270,220" fill="#8B4513"/>
+                        </g>
+
+                        <!-- Trees -->
+                        <g opacity="0.4">
+                            <polygon points="100,450 110,420 120,450" fill="#228B22"/>
+                            <rect x="108" y="450" width="4" height="15" fill="#8B4513"/>
+                            <polygon points="150,480 160,450 170,480" fill="#228B22"/>
+                            <rect x="158" y="480" width="4" height="15" fill="#8B4513"/>
+                            <polygon points="70,500 80,470 90,500" fill="#228B22"/>
+                            <rect x="78" y="500" width="4" height="15" fill="#8B4513"/>
+                        </g>
+
+                        <!-- Waves/Water -->
+                        <g opacity="0.3">
+                            <path d="M 40,300 Q 50,295 60,300 T 80,300" stroke="#4682B4" stroke-width="2" fill="none"/>
+                            <path d="M 40,310 Q 50,305 60,310 T 80,310" stroke="#4682B4" stroke-width="2" fill="none"/>
+                            <path d="M 280,520 Q 290,515 300,520 T 320,520" stroke="#4682B4" stroke-width="2" fill="none"/>
+                            <path d="M 280,530 Q 290,525 300,530 T 320,530" stroke="#4682B4" stroke-width="2" fill="none"/>
+                        </g>
+
+                        <!-- Decorative border -->
+                        <rect x="10" y="10" width="380" height="580" fill="none"
+                              stroke="#8B4513" stroke-width="3" stroke-dasharray="10,5"/>
+                    </svg>
+                </div>
+                <div class="journey-map-container">
+                    <svg class="treasure-map-svg journey-map-svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%;display:block" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="800" height="600" fill="#f4e7d7"/>
+                        <!-- sea -->
+                        <path d="M0 0 H800 V90 Q700 130 620 80 T430 70 Q300 40 190 90 T0 70Z" fill="#cfe6ee"/>
+                        <path d="M0 600 V500 Q120 540 250 505 T470 520 Q620 560 800 500 V600Z" fill="#cfe6ee"/>
+                        <g stroke="#6fa3b5" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.8">
+                            <path d="M60 40 q10 -8 20 0 t20 0"/><path d="M300 55 q10 -8 20 0 t20 0"/>
+                            <path d="M520 35 q10 -8 20 0 t20 0"/><path d="M90 560 q10 -8 20 0 t20 0"/>
+                            <path d="M600 565 q10 -8 20 0 t20 0"/><path d="M330 565 q10 -8 20 0 t20 0"/>
+                        </g>
+                        <!-- island -->
+                        <path d="M70 330 Q60 230 150 200 Q230 130 330 160 Q420 90 540 120 Q640 70 735 150 Q770 250 730 320 Q760 420 670 470 Q600 540 500 500 Q400 540 300 505 Q200 530 130 470 Q60 440 70 330Z" fill="#e6d3a8" stroke="#000" stroke-width="4"/>
+                        <path d="M95 335 Q90 250 165 222 Q240 160 335 185 Q420 120 535 145 Q630 100 712 165" fill="none" stroke="#c9b27a" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round"/>
+                        <!-- mountains -->
+                        <g stroke="#000" stroke-width="3" stroke-linejoin="round">
+                            <polygon points="430,230 465,160 500,230" fill="#c4a484"/>
+                            <polygon points="475,230 515,150 555,230" fill="#a98467"/>
+                            <polygon points="215,330 245,275 275,330" fill="#c4a484"/>
+                        </g>
+                        <path d="M465 160 l10 22 -12 -6 -9 14" fill="#fff" stroke="#000" stroke-width="2"/>
+                        <!-- trees -->
+                        <g stroke="#000" stroke-width="2.5" stroke-linejoin="round">
+                            <polygon points="115,375 128,345 141,375" fill="#a8e6cf"/><rect x="125" y="375" width="6" height="12" fill="#8B4513"/>
+                            <polygon points="600,300 613,270 626,300" fill="#a8e6cf"/><rect x="610" y="300" width="6" height="12" fill="#8B4513"/>
+                            <polygon points="640,330 653,300 666,330" fill="#a8e6cf"/><rect x="650" y="330" width="6" height="12" fill="#8B4513"/>
+                            <polygon points="270,430 283,400 296,430" fill="#a8e6cf"/><rect x="280" y="430" width="6" height="12" fill="#8B4513"/>
+                        </g>
+                        <!-- route -->
+                        <path id="map-route" d="M255 345 C 310 330, 350 280, 405 255 S 500 360, 540 385 S 640 270, 660 185" fill="none" stroke="#000" stroke-width="5" stroke-dasharray="4 14" stroke-linecap="round"/>
+                        <!-- X marks the spot -->
+                        <g transform="translate(660,185)" stroke="#dc143c" stroke-width="6" stroke-linecap="round" opacity="0.9">
+                            <line x1="-22" y1="-22" x2="22" y2="22"/><line x1="22" y1="-22" x2="-22" y2="22"/>
+                        </g>
+                        <!-- compass -->
+                        <g transform="translate(86,106)" stroke="#000" stroke-width="3">
+                            <circle r="38" fill="#fff"/>
+                            <polygon points="0,-34 8,0 0,34 -8,0" fill="#ffd93d"/>
+                            <polygon points="-34,0 0,-8 34,0 0,8" fill="#66d9ef"/>
+                            <circle r="4" fill="#000"/>
+                            <text y="-44" text-anchor="middle" stroke="none" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="18" fill="#000">N</text>
+                        </g>
+                        <!-- stops -->
+        <g class="map-stop" id="map-stop-1" data-stop="1">
+            <circle class="stop-pulse" cx="255" cy="345" r="20" fill="#ffd93d" opacity="0"/>
+            <circle cx="255" cy="345" r="15" fill="#ff6b6b" stroke="#000" stroke-width="4"/>
+            <text x="255" y="351" text-anchor="middle" font-family="Space Mono, monospace" font-weight="700" font-size="16" fill="#000">1</text>
+            <rect x="175.5" y="367" width="159.0" height="46" fill="#fff" stroke="#000" stroke-width="3"/>
+            <text x="255" y="387" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="15" fill="#000">Flutter Intern</text>
+            <text x="255" y="404" text-anchor="middle" font-family="Caveat, cursive" font-size="17" fill="#555">Zestup Restaurant</text>
+        </g>
+        <g class="map-stop" id="map-stop-2" data-stop="2">
+            <circle class="stop-pulse" cx="405" cy="255" r="20" fill="#ffd93d" opacity="0"/>
+            <circle cx="405" cy="255" r="15" fill="#ff6b6b" stroke="#000" stroke-width="4"/>
+            <text x="405" y="261" text-anchor="middle" font-family="Space Mono, monospace" font-weight="700" font-size="16" fill="#000">2</text>
+            <rect x="325.5" y="277" width="159.0" height="46" fill="#fff" stroke="#000" stroke-width="3"/>
+            <text x="405" y="297" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="15" fill="#000">Electrify</text>
+            <text x="405" y="314" text-anchor="middle" font-family="Caveat, cursive" font-size="17" fill="#555">Backend APIs</text>
+        </g>
+        <g class="map-stop" id="map-stop-3" data-stop="3">
+            <circle class="stop-pulse" cx="540" cy="385" r="20" fill="#ffd93d" opacity="0"/>
+            <circle cx="540" cy="385" r="15" fill="#ff6b6b" stroke="#000" stroke-width="4"/>
+            <text x="540" y="391" text-anchor="middle" font-family="Space Mono, monospace" font-weight="700" font-size="16" fill="#000">3</text>
+            <rect x="479.5" y="407" width="121.0" height="46" fill="#fff" stroke="#000" stroke-width="3"/>
+            <text x="540" y="427" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="15" fill="#000">Quick Mart</text>
+            <text x="540" y="444" text-anchor="middle" font-family="Caveat, cursive" font-size="17" fill="#555">DB + React</text>
+        </g>
+        <g class="map-stop" id="map-stop-4" data-stop="4">
+            <circle class="stop-pulse" cx="660" cy="185" r="20" fill="#ffd93d" opacity="0"/>
+            <circle cx="660" cy="185" r="15" fill="#ff6b6b" stroke="#000" stroke-width="4"/>
+            <text x="660" y="191" text-anchor="middle" font-family="Space Mono, monospace" font-weight="700" font-size="16" fill="#000">4</text>
+            <rect x="580.5" y="207" width="159.0" height="46" fill="#fff" stroke="#000" stroke-width="3"/>
+            <text x="660" y="227" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="15" fill="#000">Today</text>
+            <text x="660" y="244" text-anchor="middle" font-family="Caveat, cursive" font-size="17" fill="#555">Still building</text>
+        </g>
+                        <rect x="8" y="8" width="784" height="584" fill="none" stroke="#8B4513" stroke-width="4" stroke-dasharray="12 7"/>
+                    </svg>
+                    <svg class="map-overlay-lines" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+                                <path d="M 80 0 L 0 0 0 80" fill="none" stroke="#000" stroke-width="2" opacity="0.8"/>
+                            </pattern>
+                            <pattern id="scratches" width="200" height="200" patternUnits="userSpaceOnUse">
+                                <line x1="10" y1="20" x2="60" y2="25" stroke="#000" stroke-width="2" opacity="0.7"/>
+                                <line x1="100" y1="50" x2="180" y2="48" stroke="#000" stroke-width="1.5" opacity="0.6"/>
+                                <line x1="30" y1="120" x2="90" y2="115" stroke="#000" stroke-width="2" opacity="0.7"/>
+                                <line x1="140" y1="160" x2="195" y2="165" stroke="#000" stroke-width="1.5" opacity="0.6"/>
+                                <line x1="5" y1="180" x2="45" y2="175" stroke="#000" stroke-width="1.5" opacity="0.6"/>
+                            </pattern>
+                        </defs>
+                        <rect width="100%" height="100%" fill="url(#grid)"/>
+                        <rect width="100%" height="100%" fill="url(#scratches)"/>
+                    </svg>
+                    <img src="image/pirat.png" alt="Pirate" class="map-pirate-overlay" width="200" height="200" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="skills">
+            <h2 class="section-title">SKILLS</h2>
+
+            <div class="skills-grid-modern">
+                <div class="skill-box">
+                    <div class="skill-box-header">
+                        <i class="fas fa-mobile-alt skill-icon-large"></i>
+                        <h3 class="skill-box-title">Mobile & Frontend</h3>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tag"><i class="fas fa-fire"></i> Flutter</span>
+                        <span class="tag"><i class="fab fa-react"></i> React</span>
+                        <span class="tag"><i class="fab fa-html5"></i> HTML</span>
+                        <span class="tag"><i class="fab fa-css3"></i> CSS</span>
+                    </div>
+                </div>
+                <div class="skill-box">
+                    <div class="skill-box-header">
+                        <i class="fas fa-server skill-icon-large"></i>
+                        <h3 class="skill-box-title">Backend</h3>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tag"><i class="fab fa-node-js"></i> Node.js</span>
+                        <span class="tag"><i class="fas fa-server"></i> Express.js</span>
+                        <span class="tag"><i class="fas fa-network-wired"></i> REST APIs</span>
+                        <span class="tag"><i class="fas fa-wifi"></i> WebSockets</span>
+                    </div>
+                </div>
+                <div class="skill-box">
+                    <div class="skill-box-header">
+                        <i class="fas fa-code skill-icon-large"></i>
+                        <h3 class="skill-box-title">Programming</h3>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tag"><i class="fas fa-code"></i> C++</span>
+                        <span class="tag"><i class="fas fa-microchip"></i> Assembly (x86)</span>
+                        <span class="tag"><i class="fas fa-database"></i> SQL</span>
+                        <span class="tag"><i class="fas fa-gamepad"></i> SFML</span>
+                    </div>
+                </div>
+                <div class="skill-box">
+                    <div class="skill-box-header">
+                        <i class="fas fa-database skill-icon-large"></i>
+                        <h3 class="skill-box-title">Databases & Cloud</h3>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tag"><i class="fas fa-fire"></i> Firebase</span>
+                        <span class="tag"><i class="fas fa-database"></i> Supabase</span>
+                        <span class="tag"><i class="fas fa-server"></i> MS SQL Server</span>
+                        <span class="tag"><i class="fas fa-database"></i> SQLite</span>
+                        <span class="tag"><i class="fas fa-database"></i> PostgreSQL</span>
+                        <span class="tag"><i class="fas fa-bolt"></i> Redis</span>
+                        <span class="tag"><i class="fab fa-docker"></i> Docker</span>
+                    </div>
+                </div>
+                <div class="skill-box">
+                    <div class="skill-box-header">
+                        <i class="fas fa-code-branch skill-icon-large"></i>
+                        <h3 class="skill-box-title">Tools</h3>
+                    </div>
+                    <div class="tech-tags">
+                        <span class="tag"><i class="fab fa-git-alt"></i> Git</span>
+                        <span class="tag"><i class="fab fa-github"></i> GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-compact" id="projects">
+            <div class="creator-showcase">
+                <p class="creator-label">Creator of</p>
+                <div class="creator-projects-grid">
+                    <div class="creator-item" role="button" tabindex="0" data-project="cargorun" aria-haspopup="dialog" aria-label="CargoRun – view project details">
+                        <span class="creator-project">
+                            <span class="creator-logo creator-icon c1"><i class="fas fa-truck-fast"></i></span>
+                            <span class="creator-name">CargoRun</span>
+                        </span>
+                        <p class="creator-tagline">An Uber/inDrive-style cargo delivery platform with live rider tracking, auto rider matching, and distance-based pricing. Flutter app on Dockerized microservices with Redis, Supabase PostgreSQL and Mapbox.</p>
+                        <span class="creator-more">View details <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                    <div class="creator-item" role="button" tabindex="0" data-project="elitedent" aria-haspopup="dialog" aria-label="EliteDent – view project details">
+                        <span class="creator-project">
+                            <span class="creator-logo creator-icon c2"><i class="fas fa-tooth"></i></span>
+                            <span class="creator-name">EliteDent</span>
+                        </span>
+                        <p class="creator-tagline">A healthcare communication platform connecting dental clinics, dentists and labs. Role-based Flutter app with admin approval, messaging, and AI-assisted workflows, designed for iPad.</p>
+                        <span class="creator-more">View details <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                    <div class="creator-item" role="button" tabindex="0" data-project="resumepipeline" aria-haspopup="dialog" aria-label="AI Resume Pipeline – view project details">
+                        <span class="creator-project">
+                            <span class="creator-logo creator-icon c2"><i class="fas fa-file-lines"></i></span>
+                            <span class="creator-name">AI Resume Pipeline</span>
+                        </span>
+                        <p class="creator-tagline">An n8n pipeline that tailors my resume to any job description and delivers a print-ready PDF and an editable DOCX to my inbox in about 15 seconds.</p>
+                        <span class="creator-more">View details <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                    <div class="creator-item" role="button" tabindex="0" data-project="duedesk" aria-haspopup="dialog" aria-label="Due Desk – view project details">
+                        <span class="creator-project">
+                            <span class="creator-logo creator-icon c3"><i class="fas fa-file-invoice-dollar"></i></span>
+                            <span class="creator-name">Due Desk</span>
+                        </span>
+                        <p class="creator-tagline">A smart payment follow-up system for businesses to track creditors, send reminders, and recover payments faster. Built with Flutter, Supabase, and AI-generated follow-ups.</p>
+                        <span class="creator-more">View details <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                    <div class="creator-item" role="button" tabindex="0" data-project="rearguard" aria-haspopup="dialog" aria-label="Rear Guard – view project details">
+                        <span class="creator-project">
+                            <span class="creator-logo creator-icon c1"><i class="fas fa-car-burst"></i></span>
+                            <span class="creator-name">Rear Guard</span>
+                        </span>
+                        <p class="creator-tagline">See what's behind you before it's too late. RearGuard AI runs YOLO inference on-device with ONNX Runtime and flags rear collision risks in real time.</p>
+                        <span class="creator-more">View details <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                    <div class="creator-item" role="button" tabindex="0" data-project="finance" aria-haspopup="dialog" aria-label="Finance Master – view project details">
+                        <span class="creator-project">
+                            <span class="creator-logo creator-icon c3"><i class="fas fa-wallet"></i></span>
+                            <span class="creator-name">Finance Master</span>
+                        </span>
+                        <p class="creator-tagline">All-in-one offline finance manager: accounts, stocks with live PSX prices, dividends, encrypted backups, and biometric protection. Built with Flutter.</p>
+                        <span class="creator-more">View details <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                    <div class="creator-item" role="button" tabindex="0" data-project="remotex" aria-haspopup="dialog" aria-label="RemoteX – view project details">
+                        <span class="creator-project">
+                            <span class="creator-logo creator-icon c1"><i class="fas fa-wifi"></i></span>
+                            <span class="creator-name">RemoteX</span>
+                        </span>
+                        <p class="creator-tagline">A remote device control platform with real-time command execution and encrypted communication. Built with C++, Flutter, Node.js and Supabase.</p>
+                        <span class="creator-more">View details <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                    <div class="creator-item" role="button" tabindex="0" data-project="restaurant" aria-haspopup="dialog" aria-label="Zestup Restaurant – view project details">
+                        <span class="creator-project">
+                            <span class="creator-logo creator-icon c2"><i class="fas fa-utensils"></i></span>
+                            <span class="creator-name">Restaurant App</span>
+                        </span>
+                        <p class="creator-tagline">A full food ordering app with menus, cart, live delivery tracking over sockets, and order history. Built with Flutter &amp; Firebase.</p>
+                        <span class="creator-more">View details <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                    <div class="creator-item" role="button" tabindex="0" data-project="zestup" aria-haspopup="dialog" aria-label="Zestup Delivery – view project details">
+                        <span class="creator-project">
+                            <span class="creator-logo creator-icon c3"><i class="fas fa-truck"></i></span>
+                            <span class="creator-name">Zestup Delivery</span>
+                        </span>
+                        <p class="creator-tagline">A companion app for delivery drivers with real-time GPS tracking, order management, and customer communication. Built with Flutter &amp; Firebase.</p>
+                        <span class="creator-more">View details <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                    <div class="creator-item" role="button" tabindex="0" data-project="papers" aria-haspopup="dialog" aria-label="Fast Past Papers – view project details">
+                        <span class="creator-project">
+                            <span class="creator-logo creator-icon c1"><i class="fas fa-book"></i></span>
+                            <span class="creator-name">Fast Past Papers</span>
+                        </span>
+                        <p class="creator-tagline">A student resource app with past papers by subject and year, offline viewing, an SGPA/CGPA calculator and admin roles. Helped 100+ students.</p>
+                        <span class="creator-more">View details <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                    <div class="creator-item" role="button" tabindex="0" data-project="ups" aria-haspopup="dialog" aria-label="Electrify – view project details">
+                        <span class="creator-project">
+                            <span class="creator-logo creator-icon c2"><i class="fas fa-shopping-cart"></i></span>
+                            <span class="creator-name">Electrify</span>
+                        </span>
+                        <p class="creator-tagline">An online platform for sellers with inventory, order processing and live updates. I built the backend APIs with Node.js &amp; Express.</p>
+                        <span class="creator-more">View details <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                    <div class="creator-item" role="button" tabindex="0" data-project="quickmart" aria-haspopup="dialog" aria-label="Quick Mart – view project details">
+                        <span class="creator-project">
+                            <span class="creator-logo creator-icon c3"><i class="fas fa-store"></i></span>
+                            <span class="creator-name">Quick Mart</span>
+                        </span>
+                        <p class="creator-tagline">A store management system covering inventory, orders, customers and transactions. Built with React, Node.js and MS SQL Server.</p>
+                        <span class="creator-more">View details <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                    <div class="creator-item" role="button" tabindex="0" data-project="moneymingle" aria-haspopup="dialog" aria-label="Money Mingle – view project details">
+                        <span class="creator-project">
+                            <span class="creator-logo creator-icon c1"><i class="fas fa-university"></i></span>
+                            <span class="creator-name">Money Mingle</span>
+                        </span>
+                        <p class="creator-tagline">A banking management system with accounts, deposits, transfers and transaction history. Built in C++ with OOP and file handling.</p>
+                        <span class="creator-more">View details <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                    <div class="creator-item" role="button" tabindex="0" data-project="flaptap" aria-haspopup="dialog" aria-label="Flap Tap (Assembly) – view project details">
+                        <span class="creator-project">
+                            <span class="creator-logo creator-icon c2"><i class="fas fa-microchip"></i></span>
+                            <span class="creator-name">Flap Tap (Assembly)</span>
+                        </span>
+                        <p class="creator-tagline">A pure x86 Assembly remake of Flappy Bird with direct memory graphics, interrupt-driven input and efficient animation.</p>
+                        <span class="creator-more">View details <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                    <div class="creator-item" role="button" tabindex="0" data-project="flappycpp" aria-haspopup="dialog" aria-label="Flappy Bird (C++) – view project details">
+                        <span class="creator-project">
+                            <span class="creator-logo creator-icon c3"><i class="fas fa-gamepad"></i></span>
+                            <span class="creator-name">Flappy Bird (C++)</span>
+                        </span>
+                        <p class="creator-tagline">A Flappy Bird recreation in C++ and SFML with physics, procedural pipes, collision detection and high scores.</p>
+                        <span class="creator-more">View details <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <h2 class="section-title">GET IN TOUCH</h2>
+            <div class="contact-container-compact">
+                <p class="contact-intro">I'm always interested in hearing about new projects and opportunities. Let's build something together!</p>
+                <div class="contact-grid">
+                    <a href="#" target="_blank" class="contact-card" data-contact="linkedin" aria-label="LinkedIn profile">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="#" target="_blank" class="contact-card" data-contact="github" aria-label="GitHub profile">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="#" class="contact-card" data-contact="email">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email</span>
+                    </a>
+                    <a href="#" class="contact-card" data-contact="phone" aria-label="Copy phone number">
+                        <i class="fas fa-phone"></i>
+                        <span>Phone</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-compact">
+                <div class="footer-main">
+                    <div class="footer-brand-compact">
+                        <strong>HAMZA NAVEED</strong>
+                        <span>Computer Science Student | Software Developer</span>
+                    </div>
+                    <div class="footer-nav-compact">
+                        <a href="#hero">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#experience">Journey</a>
+                        <a href="#skills">Skills</a>
+                    </div>
+                    <div class="footer-social-compact">
+                        <a href="#" target="_blank" title="GitHub" data-contact="github">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" target="_blank" title="LinkedIn" data-contact="linkedin">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" title="Email" data-contact="email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-bottom-compact">
+                    <span>© 2026 Hamza Naveed. All rights reserved.</span>
+                </div>
+            </div>
+        </footer>
     </div>
-</div>
-</div>
-</div>
-</div>
-
-<!-- Flappy Bird C++ Modal -->
-<div class="modal" id="flappy-cpp-modal">
-<div class="modal-content">
-<div class="modal-header">
-<h2>Flappy Bird (C++)</h2>
-<button class="close-modal" onclick="closeProjectModal('flappy-cpp-modal')">✕</button>
-</div>
-
-<div class="modal-section">
-<h3>Project Overview</h3>
-<p class="modal-description">A recreation of the classic Flappy Bird game using C++ and SFML. This project demonstrates game development fundamentals including collision detection, physics, and event handling.</p>
-</div>
-
-<div class="modal-section">
-<h3>Key Features</h3>
-<ul style="margin-left: 20px; line-height: 2;">
-<li>Smooth bird physics and animation</li>
-<li>Procedural pipe generation</li>
-<li>Collision detection system</li>
-<li>Score tracking and high scores</li>
-<li>Sound effects and background music</li>
-<li>Responsive controls</li>
-</ul>
-</div>
-
-<div class="modal-section">
-<h3>Technologies Used</h3>
-<div class="modal-tags">
-<span class="modal-tag">C++</span>
-<span class="modal-tag">SFML</span>
-<span class="modal-tag">Collision Detection</span>
-<span class="modal-tag">File I/O</span>
-</div>
-</div>
-
-<div class="modal-section">
-<h3>Learning Outcomes</h3>
-<p class="modal-description">Gained deep understanding of game development concepts, memory management in C++, Physics implementation and real-time event processing.</p>
-</div>
-
-<div class="modal-section">
-<div class="modal-links">
-<a href="https://drive.google.com/file/d/1UgK_iLOWh-o-XShJ4IHD9R4VKLoSNUPd/view?usp=sharing" class="modal-link" target="_blank"><i class="fab fa-google-drive"></i> View Project</a>
-</div>
-</div>
-
-</div>
-</div>
-
-<!-- Flappy Bird Assembly Modal -->
-<div class="modal" id="flappy-asm-modal">
-<div class="modal-content">
-<div class="modal-header">
-<h2>Flappy Bird (Assembly)</h2>
-<button class="close-modal" onclick="closeProjectModal('flappy-asm-modal')">✕</button>
-</div>
-
-<div class="modal-section">
-<h3>Project Overview</h3>
-<p class="modal-description">A challenging implementation of Flappy Bird in pure x86 Assembly language. This low-level project demonstrates deep understanding of computer architecture and graphics programming.</p>
-</div>
-
-<div class="modal-section">
-<h3>Key Features</h3>
-<ul style="margin-left: 20px; line-height: 2;">
-<li>Direct memory manipulation for graphics</li>
-<li>Hardware-level optimizations</li>
-<li>Interrupt handling for input</li>
-<li>Efficient animation routines</li>
-<li>Minimal resource footprint</li>
-<li>Real-time performance</li>
-</ul>
-</div>
-
-<div class="modal-section">
-<h3>Technologies Used</h3>
-<div class="modal-tags">
-<span class="modal-tag">x86 Assembly</span>
-<span class="modal-tag">Graphics Mode</span>
-<span class="modal-tag">Interrupt Handling</span>
-<span class="modal-tag">Memory Management</span>
-<span class="modal-tag">Hardware I/O</span>
-</div>
-</div>
-
-<div class="modal-section">
-<h3>Challenges & Solutions</h3>
-<p class="modal-description">Overcame complex memory addressing modes, optimized code for minimal cycles, and debugged at the assembly level to achieve smooth gameplay despite hardware constraints.</p>
-</div>
-
-
-
-<!--add linkedin link here-->>
-<div class="modal-section">
-    <div class="modal-links">
-        <a href="https://www.linkedin.com/posts/huzaifa-shabbir-b8022a2a3_coal-semesterproject-computerorganization-ugcPost-7270503995536785409-Cog0?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEXyrXIBOPznvhUFb04dNM7ub7d0DOSHCps" class="modal-link" target="_blank">
-            <i class="fab fa-linkedin"></i> View LinkedIn
-        </a>
     </div>
-</div>
-</div>
-</div>
 
-<!-- UPS E-Commerce Platform Modal -->
-<div class="modal" id="ecommerce-modal">
-<div class="modal-content">
-<div class="modal-header">
-<h2>UPS E-Commerce Platform</h2>
-<button class="close-modal" onclick="closeProjectModal('ecommerce-modal')">✕</button>
-</div>
-
-<div class="modal-section">
-<h3>Project Overview</h3>
-<p class="modal-description">A comprehensive online platform designed for UPS seller and service provider. This full-stack application enables merchants to manage inventory, process orders, and deliver services through an intuitive web interface.</p>
-</div>
-
-<div class="modal-section">
-<h3>Key Features</h3>
-<ul style="margin-left: 20px; line-height: 2;">
-<li>Seller dashboard with analytics</li>
-<li>Product and inventory management</li>
-<li>Order processing and fulfillment tracking</li>
-<li>Customer reviews and ratings</li>
-<li>Responsive design for all devices</li>
-<li>Real-time order notifications</li>
-<li>Secure authentication and authorization</li>
-</ul>
-</div>
-<div class="modal-section">
-<h3>Technologies Used</h3>
-<div class="modal-tags">
-<span class="modal-tag">Node.js</span>
-<span class="modal-tag">Express</span>
-<span class="modal-tag">REST APIs</span>
-</div>
-</div>
-
-<div class="modal-section">
-<h3>My Contributions</h3>
-<p class="modal-description">
-Developed the backend architecture for the restaurant ordering platform. 
-Designed and implemented FAST APIs for order management, user operations, and seller interactions. 
-Ensured efficient server-side handling of orders and live updates.
-</p>
-</div>
-
-<!--add linkedin link here-->>
-<div class="modal-section">
-    <div class="modal-links">
-        <a href="https://www.linkedin.com/in/hamzanaveed" class="modal-link" target="_blank">
-            <i class="fab fa-linkedin"></i> View LinkedIn
-        </a>
+    <div class="project-modal" id="project-modal" hidden>
+        <div class="project-modal-box" role="dialog" aria-modal="true" aria-labelledby="pm-title" tabindex="-1">
+            <button type="button" class="pm-close" id="pm-close" aria-label="Close project details"><i class="fas fa-xmark"></i></button>
+            <div class="pm-head">
+                <span class="creator-icon" id="pm-icon"></span>
+                <h3 id="pm-title"></h3>
+            </div>
+            <div id="pm-body"></div>
+        </div>
     </div>
-</div>
-</div>
-</div>
-</div>
 
-<!-- Quick Mart Modal -->
-<div class="modal" id="quickmart-modal">
-<div class="modal-content">
-<div class="modal-header">
-<h2>Quick Mart</h2>
-<button class="close-modal" onclick="closeProjectModal('quickmart-modal')">✕</button>
-</div>
+    <script>
+        // Always start at top of page on reload
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
 
-<div class="modal-section">
-<h3>Project Overview</h3>
-<p class="modal-description">
-Quick Mart is a database-driven store management system developed as part of my Database Lab project. 
-The system connects a React-based web interface with an MS SQL Server database to manage store operations 
-such as inventory, orders, customers, and transactions. The goal was to design an efficient relational 
-database and integrate it with a functional web interface for testing and interaction.
-</p>
-</div>
+        // Loading Screen
+        window.addEventListener('load', () => {
+            const loader = document.querySelector('.loader-overlay');
+            setTimeout(() => {
+                loader.classList.add('hidden');
+                setTimeout(() => loader.classList.add('gone'), 400);
+            }, 1200); // Hide after 1.2 seconds
+        });
 
-<div class="modal-section">
-<h3>Key Features</h3>
-<ul style="margin-left: 20px; line-height: 2;">
-<li>Inventory and stock management system</li>
-<li>Customer and order record management</li>
-<li>Employee data handling</li>
-<li>Supplier information for restocking</li>
-<li>Transaction history and sales records</li>
-</ul>
-</div>
+        // Single frame-synced scroll pipeline: every scroll effect runs once per frame,
+        // read-heavy tasks first and the layout-changing gap parallax last, so the browser
+        // lays the page out once per frame instead of once per handler.
+        const scrollTasks = [];
+        let scrollTicking = false;
+        function onScrollFrame(fn, priority = 0) {
+            scrollTasks.push({ fn, priority });
+            scrollTasks.sort((a, b) => a.priority - b.priority);
+        }
+        function runScrollTasks() {
+            scrollTicking = false;
+            for (const t of scrollTasks) t.fn();
+        }
+        function requestScrollFrame() {
+            if (!scrollTicking) {
+                scrollTicking = true;
+                requestAnimationFrame(runScrollTasks);
+            }
+        }
+        window.addEventListener('scroll', requestScrollFrame, { passive: true });
+        window.addEventListener('resize', requestScrollFrame);
 
-<div class="modal-section">
-<h3>Technologies Used</h3>
-<div class="modal-tags">
-<span class="modal-tag">React</span>
-<span class="modal-tag">MS SQL Server</span>
-<span class="modal-tag">Node.js</span>
-<span class="modal-tag">Express</span>
-<span class="modal-tag">SQL</span>
-</div>
-</div>
+        // Mark the page as "scrolling" so hover effects don't fire under a moving cursor
+        let scrollIdleTimer = null;
+        window.addEventListener('scroll', () => {
+            document.documentElement.classList.add('is-scrolling');
+            clearTimeout(scrollIdleTimer);
+            scrollIdleTimer = setTimeout(() => document.documentElement.classList.remove('is-scrolling'), 120);
+        }, { passive: true });
 
-<div class="modal-section">
-<h3>My Contributions</h3>
-<p class="modal-description">
-Designed the complete relational database schema and implemented the database using MS SQL Server. 
-Created tables, relationships, constraints, and SQL queries to support store operations. 
-Integrated the database with a web interface to perform CRUD operations for inventory, orders, and customers.
-</p>
-</div>
+        // Pause the looping hero animations while the hero is off-screen
+        const heroSection = document.getElementById('hero');
+        new IntersectionObserver(([e]) => heroSection.classList.toggle('paused', !e.isIntersecting)).observe(heroSection);
 
-<div class="modal-section">
-<div class="modal-links">
-<a href="https://www.linkedin.com/posts/huzaifa-shabbir-b8022a2a3_reactjs-mssql-fullstackdevelopment-ugcPost-7335574695108358146-tWo_?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEXyrXIBOPznvhUFb04dNM7ub7d0DOSHCps" class="modal-link" target="_blank"><i class="fab fa-linkedin"></i> View LinkedIn</a>
-</div>
-</div>
-</div>
-</div>
+        // Hero Photo Tilt on Scroll
+        let photoTilted = false;
+        const heroPhoto = document.querySelector('.hero-photo');
 
-<!-- Money Mingle Modal -->
-<div class="modal" id="moneymingle-modal">
-<div class="modal-content">
-<div class="modal-header">
-<h2>Money Mingle: A Bank</h2>
-<button class="close-modal" onclick="closeProjectModal('moneymingle-modal')">✕</button>
-</div>
+        onScrollFrame(() => {
+            if (!photoTilted && window.scrollY > 5) {
+                heroPhoto.classList.add('tilted');
+                photoTilted = true;
+            }
+        });
 
-<div class="modal-section">
-<h3>Project Overview</h3>
-<p class="modal-description">
-Money Mingle is a banking management system developed as my Semester 2 programming project.
-The system simulates core banking operations such as account creation, deposits, withdrawals,
-fund transfers, and transaction tracking. The project focuses on applying object-oriented
-programming concepts to design a structured and secure banking system.
-</p>
-</div>
+        // Hero Photo Hover - Reset to starting position
+        heroPhoto.addEventListener('mouseenter', () => {
+            heroPhoto.classList.remove('tilted');
+        });
 
-<div class="modal-section">
-<h3>Key Features</h3>
-<ul style="margin-left: 20px; line-height: 2;">
-<li>Create and manage customer bank accounts</li>
-<li>Deposit and withdraw funds securely</li>
-<li>Transfer money between accounts</li>
-<li>Transaction history tracking</li>
-<li>Basic security and validation mechanisms</li>
-</ul>
-</div>
+        heroPhoto.addEventListener('mouseleave', () => {
+            if (photoTilted) {
+                heroPhoto.classList.add('tilted');
+            }
+        });
 
-<div class="modal-section">
-<h3>Technologies Used</h3>
-<div class="modal-tags">
-<span class="modal-tag">C++</span>
-<span class="modal-tag">Object-Oriented Programming</span>
-<span class="modal-tag">File Handling</span>
-<span class="modal-tag">Data Structures</span>
-</div>
-</div>
+        // Falling SVG - Only terminal (top-right)
+        let terminalFallen = false;
+        const decoTerminal = document.querySelector('.deco-terminal');
+        const heroContent = document.querySelector('.hero-content');
 
-<div class="modal-section">
-<h3>My Contributions</h3>
-<p class="modal-description">
-Designed and developed the core banking system by implementing account management,
-transaction processing, and secure data storage using file handling. Applied
-object-oriented programming principles such as encapsulation, inheritance, and
-modular class design to build a structured and maintainable banking application.
-</p>
-</div>
+        function calculateFallDistance() {
+            const heroContentRect = heroContent.getBoundingClientRect();
+            const heroContentBottom = heroContentRect.bottom;
+            const terminalRect = decoTerminal.getBoundingClientRect();
+            const terminalFall = Math.max(0, heroContentBottom - terminalRect.bottom - 50);
+            decoTerminal.style.setProperty('--fall-distance', `${terminalFall}px`);
+        }
 
-<div class="modal-section">
-<div class="modal-links">
-<a href="https://www.linkedin.com/posts/hamza-naveed-3aa01b289_moneymingle-ugcPost-7212058573869096961-Srai?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEXyrXIBOPznvhUFb04dNM7ub7d0DOSHCps" class="modal-link" target="_blank"><i class="fab fa-linkedin"></i> View LinkedIn</a>
-</div>
-</div>
-</div>
-</div>
+        calculateFallDistance();
+        window.addEventListener('resize', calculateFallDistance);
 
-<script>
+        onScrollFrame(() => {
+            if (!terminalFallen && window.scrollY > 5) {
+                decoTerminal.classList.add('falling');
+                terminalFallen = true;
+            }
+        });
 
-function openProjectModal(modalId){
-const modal = document.getElementById(modalId);
-if(modal){
-modal.classList.add('active');
-document.body.style.overflow = 'hidden';
-}
-}
+        // Paper Tear Gap Parallax Effect
+        const pageGap = document.querySelector('.page-gap');
+        const paperTearBottom = document.querySelector('.paper-tear-bottom');
+        const paperTearBottomBgGray = document.querySelector('.paper-tear-bottom svg path[fill="#d0d0d0"]');
+        const paperTearBottomBgWhite = document.querySelector('.paper-tear-bottom svg path[fill="#ffffff"]');
+        const tearTapeSticker = document.querySelector('.tear-tape-sticker');
+        const minGapHeight = -30;
 
-function closeProjectModal(modalId){
-const modal = document.getElementById(modalId);
-if(modal){
-modal.classList.remove('active');
-document.body.style.overflow = 'auto';
-}
-}
+        function updateTapePosition() {
+            if (paperTearBottom && tearTapeSticker) {
+                const rect = paperTearBottom.getBoundingClientRect();
+                tearTapeSticker.style.setProperty('--tape-position', `${rect.top}px`);
+            }
+        }
 
-// Close modal when clicking outside the content
-document.addEventListener('click', function(e){
-if(e.target.classList.contains('modal')){
-e.target.classList.remove('active');
-document.body.style.overflow = 'auto';
-}
-});
+        function updateGapParallax() {
+            if (!pageGap || !paperTearBottom) return;
 
-// Close modal with Escape key
-document.addEventListener('keydown', function(e){
-if(e.key === 'Escape'){
-const activeModals = document.querySelectorAll('.modal.active');
-activeModals.forEach(modal => {
-modal.classList.remove('active');
-document.body.style.overflow = 'auto';
-});
-}
-});
+            const isMobile = window.innerWidth <= 768;
 
-// Smooth scroll for navigation
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-anchor.addEventListener('click', function(e){
-e.preventDefault();
-const target = document.querySelector(this.getAttribute('href'));
-if(target){
-const headerHeight = document.querySelector('header').offsetHeight;
-const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
-window.scrollTo({
-top: targetPosition,
-behavior: 'smooth'
-});
-}
-});
-});
+            // Skip animation on mobile
+            if (isMobile) return;
 
-// Theme toggle functionality
-const themeToggle = document.getElementById('theme-toggle');
-const themeIcon = themeToggle.querySelector('i');
+            const scrollY = window.scrollY;
+            const initialGapHeight = 300;
+            const scrollStart = 100;
+            const scrollRange = 200;
+            const stickerDelay = 30;
+            const stickerStart = scrollStart + scrollRange + stickerDelay;
+            const stickerRange = 60;
 
-// Check for saved theme preference or default to dark mode
-const currentTheme = localStorage.getItem('theme') || 'dark';
-document.documentElement.setAttribute('data-theme', currentTheme);
-updateThemeIcon(currentTheme);
+            updateTapePosition();
 
-themeToggle.addEventListener('click', () => {
-const currentTheme = document.documentElement.getAttribute('data-theme');
-const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
-document.documentElement.setAttribute('data-theme', newTheme);
-localStorage.setItem('theme', newTheme);
-updateThemeIcon(newTheme);
-});
+            if (scrollY <= scrollStart) {
+                pageGap.style.setProperty('height', initialGapHeight + 'px', 'important');
+                paperTearBottom.style.setProperty('margin-top', '0px', 'important');
+                if (paperTearBottomBgGray) paperTearBottomBgGray.style.opacity = '1';
+                if (tearTapeSticker) {
+                    tearTapeSticker.style.transform = 'rotate(-8deg) translateY(-40px) translateZ(30px) rotateX(35deg)';
+                    tearTapeSticker.style.opacity = '0';
+                }
+            } else if (scrollY >= scrollStart && scrollY <= scrollStart + scrollRange) {
+                const progress = (scrollY - scrollStart) / scrollRange;
+                const currentHeight = initialGapHeight - (initialGapHeight - minGapHeight) * progress;
 
-function updateThemeIcon(theme) {
-if (theme === 'dark') {
-themeIcon.className = 'fas fa-moon';
-} else {
-themeIcon.className = 'far fa-lightbulb';
-}
-}
+                if (currentHeight >= 0) {
+                    pageGap.style.setProperty('height', currentHeight + 'px', 'important');
+                    paperTearBottom.style.setProperty('margin-top', '0px', 'important');
+                    if (paperTearBottomBgGray) paperTearBottomBgGray.style.opacity = '1';
+                    if (tearTapeSticker) {
+                        tearTapeSticker.style.transform = 'rotate(-8deg) translateY(-100px) translateZ(50px) rotateX(45deg)';
+                        tearTapeSticker.style.opacity = '0';
+                    }
+                } else {
+                    // Negative margin starts - fade background
+                    pageGap.style.setProperty('height', '0px', 'important');
+                    paperTearBottom.style.setProperty('margin-top', currentHeight + 'px', 'important');
 
-</script>
+                    // Fade based on negative margin progress
+                    const negativePart = Math.abs(minGapHeight);
+                    const negativeProgress = Math.abs(currentHeight) / negativePart;
+                    const opacity = 1 - negativeProgress;
 
-<script>
+                    if (paperTearBottomBgGray) paperTearBottomBgGray.style.opacity = opacity;
+                    if (tearTapeSticker) {
+                        tearTapeSticker.style.transform = 'rotate(-8deg) translateY(-100px) translateZ(50px) rotateX(45deg)';
+                        tearTapeSticker.style.opacity = '0';
+                    }
+                }
+            } else if (scrollY > stickerStart && scrollY < stickerStart + stickerRange) {
+                // Sticker animation in progress
+                pageGap.style.setProperty('height', '0px', 'important');
+                paperTearBottom.style.setProperty('margin-top', minGapHeight + 'px', 'important');
+                if (paperTearBottomBgGray) paperTearBottomBgGray.style.opacity = '0';
 
-const observer = new IntersectionObserver((entries)=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.style.opacity=1;
-entry.target.style.transform="translateY(0)";
-}
-});
-});
+                if (tearTapeSticker) {
+                    const stickerProgress = (scrollY - stickerStart) / stickerRange;
 
-document.querySelectorAll("section").forEach(section=>{
-section.style.opacity=0;
-section.style.transform="translateY(40px)";
-section.style.transition="all 0.8s ease";
-observer.observe(section);
-});
+                    // Interpolate transform values based on progress
+                    const translateY = -40 + (40 * stickerProgress);
+                    const translateZ = 30 - (30 * stickerProgress);
+                    const rotateX = 35 - (35 * stickerProgress);
+                    const opacityVal = Math.min(1, Math.max(0, (stickerProgress - 0.35) * 1.54));
 
-</script>
+                    tearTapeSticker.style.transform = `rotate(-8deg) translateY(${translateY}px) translateZ(${translateZ}px) rotateX(${rotateX}deg)`;
+                    tearTapeSticker.style.opacity = opacityVal;
+                }
+            } else if (scrollY >= stickerStart + stickerRange) {
+                // Sticker fully stuck
+                pageGap.style.setProperty('height', '0px', 'important');
+                paperTearBottom.style.setProperty('margin-top', minGapHeight + 'px', 'important');
+                if (paperTearBottomBgGray) paperTearBottomBgGray.style.opacity = '0';
+                if (tearTapeSticker) {
+                    tearTapeSticker.style.transform = 'rotate(-8deg) translateY(0px) translateZ(0px) rotateX(0deg)';
+                    tearTapeSticker.style.opacity = '1';
+                }
+            } else {
+                // Between gap close and sticker start
+                pageGap.style.setProperty('height', '0px', 'important');
+                paperTearBottom.style.setProperty('margin-top', minGapHeight + 'px', 'important');
+                if (paperTearBottomBgGray) paperTearBottomBgGray.style.opacity = '0';
+                if (tearTapeSticker) {
+                    tearTapeSticker.style.transform = 'rotate(-8deg) translateY(-40px) translateZ(30px) rotateX(35deg)';
+                    tearTapeSticker.style.opacity = '0';
+                }
+            }
+        }
 
+        onScrollFrame(updateGapParallax, 10);
+        window.addEventListener('resize', updateGapParallax);
+
+        // Initialize all animations with current scroll position
+        requestAnimationFrame(() => {
+            updateGapParallax();
+        });
+
+        // Highlight Parallax Effect
+        const highlights = document.querySelectorAll('.highlight');
+        const highlightData = new Map();
+
+        highlights.forEach((highlight, index) => {
+            const direction = index % 2 === 0 ? 'left' : 'right';
+            highlight.setAttribute('data-direction', direction);
+            highlightData.set(highlight, {
+                hasStarted: false,
+                startScroll: 0,
+                duration: 100,
+                direction: direction
+            });
+        });
+
+        function updateHighlights() {
+            const scrollY = window.scrollY;
+            const windowHeight = window.innerHeight;
+
+            highlights.forEach(highlight => {
+                const rect = highlight.getBoundingClientRect();
+                const elementTop = rect.top + scrollY;
+                const data = highlightData.get(highlight);
+
+                // Start highlighting when element is near top of viewport
+                const triggerPoint = scrollY + windowHeight * 0.8;
+
+                if (!data.hasStarted && triggerPoint >= elementTop) {
+                    data.hasStarted = true;
+                    data.startScroll = scrollY;
+                }
+
+                if (data.hasStarted) {
+                    const progress = Math.min(1, Math.max(0, (scrollY - data.startScroll) / data.duration));
+                    highlight.style.setProperty('--highlight-progress', `${progress * 100}%`);
+                }
+
+                // Reset when scrolling back up past element
+                if (data.hasStarted && scrollY < data.startScroll - 50) {
+                    data.hasStarted = false;
+                    highlight.style.setProperty('--highlight-progress', '0%');
+                }
+            });
+        }
+
+        onScrollFrame(updateHighlights);
+        requestAnimationFrame(() => {
+            updateHighlights();
+        });
+
+        // Language Stars Parallax Effect
+        const languageItems = document.querySelectorAll('.language-item');
+        const languageStarsData = new Map();
+
+        languageItems.forEach(item => {
+            const stars = item.querySelectorAll('.language-stars .star');
+            languageStarsData.set(item, {
+                hasStarted: false,
+                startScroll: 0,
+                stars: stars,
+                starDelay: 50
+            });
+        });
+
+        function updateLanguageStars() {
+            const scrollY = window.scrollY;
+            const windowHeight = window.innerHeight;
+
+            languageItems.forEach(item => {
+                const rect = item.getBoundingClientRect();
+                const elementTop = rect.top + scrollY;
+                const data = languageStarsData.get(item);
+
+                const triggerPoint = scrollY + windowHeight * 0.8;
+
+                if (!data.hasStarted && triggerPoint >= elementTop) {
+                    data.hasStarted = true;
+                    data.startScroll = scrollY;
+                }
+
+                if (data.hasStarted) {
+                    const scrollProgress = scrollY - data.startScroll;
+
+                    data.stars.forEach((star, index) => {
+                        const starTrigger = index * data.starDelay;
+                        if (scrollProgress >= starTrigger) {
+                            star.classList.add('visible');
+                        }
+                    });
+                }
+            });
+        }
+
+        onScrollFrame(updateLanguageStars);
+        requestAnimationFrame(() => {
+            updateLanguageStars();
+        });
+
+        // Journey Timeline Book Page Effect
+        const journeyTimeline = document.querySelector('.journey-timeline');
+        const journeyTimelineBack = document.querySelector('.journey-timeline-back');
+        const journeyTimelineData = {
+            hasStarted: false,
+            startScroll: 0,
+            pageRange: 200
+        };
+
+        function updateJourneyTimeline() {
+            if (!journeyTimeline || !journeyTimelineBack) return;
+
+            // Only run animation on desktop
+            if (window.innerWidth < 769) return;
+
+            const scrollY = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const rect = journeyTimeline.getBoundingClientRect();
+            const elementTop = rect.top + scrollY;
+
+            const triggerPoint = scrollY + windowHeight * 0.5;
+
+            if (!journeyTimelineData.hasStarted && triggerPoint >= elementTop) {
+                journeyTimelineData.hasStarted = true;
+                journeyTimelineData.startScroll = scrollY;
+            }
+
+            if (journeyTimelineData.hasStarted) {
+                const progress = Math.min(1, Math.max(0, (scrollY - journeyTimelineData.startScroll) / journeyTimelineData.pageRange));
+
+                // Book left page opening - timeline rotates from back to front
+                const rotateY = 180 - (180 * progress); // 180 -> 0
+
+                // Both rotate together
+                journeyTimeline.style.transform = `rotateY(${rotateY}deg)`;
+                journeyTimelineBack.style.transform = `rotateY(${rotateY}deg)`;
+
+                // Switch z-index at 90 degrees
+                if (rotateY > 95) {
+                    // Map is visible (when book is closed)
+                    journeyTimeline.style.zIndex = '1';
+                    journeyTimelineBack.style.zIndex = '100';
+                } else {
+                    // Timeline content is visible (when book is open)
+                    journeyTimeline.style.zIndex = '100';
+                    journeyTimelineBack.style.zIndex = '1';
+                }
+
+                // Enable scrolling when fully opened
+                if (progress >= 1) {
+                    journeyTimeline.style.overflowY = 'auto';
+                } else {
+                    journeyTimeline.style.overflowY = 'hidden';
+                }
+            } else {
+                // Reset to initial state
+                journeyTimeline.style.transform = 'rotateY(180deg)';
+                journeyTimelineBack.style.transform = 'rotateY(180deg)';
+                journeyTimeline.style.zIndex = '1';
+                journeyTimelineBack.style.zIndex = '100';
+                journeyTimeline.style.overflowY = 'hidden';
+            }
+        }
+
+        onScrollFrame(updateJourneyTimeline);
+        requestAnimationFrame(() => {
+            updateJourneyTimeline();
+        });
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const icon = themeToggle.querySelector('i');
+
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        body.setAttribute('data-theme', currentTheme);
+        updateIcon(currentTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const theme = body.getAttribute('data-theme');
+            const newTheme = theme === 'light' ? 'dark' : 'light';
+
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateIcon(newTheme);
+        });
+
+        function updateIcon(theme) {
+            if (theme === 'dark') {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        }
+
+        // Smooth Scroll for Navigation
+        // Re-reads the target every frame: the paper-tear gap collapses and sections
+        // fade in while scrolling, so a destination fixed at click time overshoots.
+        let scrollRaf = null;
+        function scrollToSection(el, offset = 20) {
+            if (scrollRaf) cancelAnimationFrame(scrollRaf);
+            const start = performance.now();
+            const targetY = () => {
+                const max = document.documentElement.scrollHeight - window.innerHeight;
+                const y = el.id === 'hero' ? 0 : el.getBoundingClientRect().top + window.scrollY - offset;
+                return Math.max(0, Math.min(y, max));
+            };
+            const cancel = () => { cancelAnimationFrame(scrollRaf); scrollRaf = null; };
+            window.addEventListener('wheel', cancel, { once: true, passive: true });
+            window.addEventListener('touchstart', cancel, { once: true, passive: true });
+            const step = (now) => {
+                const elapsed = now - start;
+                const target = targetY();
+                const diff = target - window.scrollY;
+                if (elapsed > 400 && Math.abs(diff) < 1) { scrollRaf = null; return; }
+                if (elapsed > 3000) { window.scrollTo({ top: target, behavior: 'instant' }); scrollRaf = null; return; }
+                const move = Math.abs(diff) < 3 ? diff : diff * 0.16;
+                window.scrollTo({ top: window.scrollY + move, behavior: 'instant' });
+                scrollRaf = requestAnimationFrame(step);
+            };
+            scrollRaf = requestAnimationFrame(step);
+        }
+
+        document.querySelectorAll('.nav-link, .nav-cta, .nav-brand, a.btn-cta, .hero-social ~ .hero-cta-container a, .footer-nav-compact a').forEach(link => {
+            const href = link.getAttribute('href');
+            if (!href || !href.startsWith('#')) return;
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetSection = href === '#' ? document.getElementById('hero') : document.querySelector(href);
+                if (targetSection) scrollToSection(targetSection);
+            });
+        });
+
+        // Smart Navbar Scroll
+        const navbar = document.querySelector('.navbar');
+        const navLinks = [...document.querySelectorAll('.nav-link')];
+        const navSections = [...document.querySelectorAll('section[id]')];
+        let lastScroll = 0;
+        let activeNavHref = null;
+
+        onScrollFrame(() => {
+            const currentScroll = window.pageYOffset;
+
+            // Smart hide/show navbar
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                navbar.classList.add('navbar-hidden');
+            } else if (currentScroll < lastScroll) {
+                navbar.classList.remove('navbar-hidden');
+            }
+
+            // Active link highlighting (only touches the DOM when the section changes)
+            let activeHref = null;
+            for (const section of navSections) {
+                if (section.getBoundingClientRect().top <= 140) activeHref = `#${section.id}`;
+            }
+            if (activeHref !== activeNavHref) {
+                activeNavHref = activeHref;
+                navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === activeHref));
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section, .timeline-item, .skill-box').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Matrix Typing Effect for Hero Greeting
+        const greetingElement = document.getElementById('hero-greeting');
+        const finalText = 'Hi there! 👋';
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*';
+
+        function matrixTypingEffect() {
+            let iterations = 0;
+            const interval = setInterval(() => {
+                greetingElement.textContent = finalText
+                    .split('')
+                    .map((char, index) => {
+                        if (index < iterations) {
+                            return finalText[index];
+                        }
+                        if (char === ' ' || char === '👋') {
+                            return char;
+                        }
+                        return chars[Math.floor(Math.random() * chars.length)];
+                    })
+                    .join('');
+
+                if (iterations >= finalText.length) {
+                    clearInterval(interval);
+                }
+
+                iterations += 1/3;
+            }, 50);
+        }
+
+        // Start the effect after a short delay
+        setTimeout(matrixTypingEffect, 500);
+
+
+        // Journey map: show the whole map on phones, fill the card on desktop
+        const journeySvg = document.querySelector('.journey-map-svg');
+        function fitJourneyMap() {
+            journeySvg.setAttribute('preserveAspectRatio', window.innerWidth <= 768 ? 'xMidYMid meet' : 'xMidYMid slice');
+        }
+        fitJourneyMap();
+        window.addEventListener('resize', fitJourneyMap);
+
+        // Journey: clicking a timeline entry pulses its stop on the map
+        document.querySelectorAll('.timeline-item-flat').forEach(item => {
+            item.style.cursor = 'pointer';
+            item.addEventListener('click', () => {
+                const n = item.id.replace('exp-', '');
+                document.querySelectorAll('.map-stop').forEach(g => g.classList.toggle('active', g.dataset.stop === n));
+                document.querySelectorAll('.timeline-item-flat').forEach(t => t.classList.toggle('active', t === item));
+            });
+        });
+
+
+        // ===== Project details popup =====
+        // To add an App Store / Google Play / GitHub link to a project, fill in the matching
+        // field below (ios, android, github). Empty fields are simply not shown.
+        const PROJECTS = {
+        "duedesk": {
+            "icon": "fa-file-invoice-dollar",
+            "name": "Due Desk",
+            "overview": "Due Desk helps small businesses and freelancers stay on top of payment collections. It gives a clean dashboard of who owes money, when payments are due and how to follow up, with WhatsApp and email integration and AI-generated reminder messages. Built for SOFTEC '26, a national competition.",
+            "features": [
+                    "Dashboard with a live overdue summary, filters for All / Overdue / Pending, search, and priority sorting",
+                    "Add, edit and delete creditors with automatic Overdue / Pending / Done status",
+                    "Three follow-up message templates: initial contact, reminder and final notice",
+                    "One-tap WhatsApp, email and phone-call follow-ups with pre-filled messages",
+                    "AI-powered follow-up message generation with Gemini",
+                    "Offline-first design with Supabase sync"
+            ],
+            "tech": [
+                    "Flutter",
+                    "Dart",
+                    "Supabase",
+                    "Gemini AI",
+                    "Offline-first"
+            ],
+            "links": {
+                    "github": "https://github.com/Huzaifa-Shabbir/payment_solution_softec_26",
+                    "ios": "",
+                    "android": "",
+                    "linkedin": ""
+            }
+        },
+        "rearguard": {
+            "icon": "fa-car-burst",
+            "name": "Rear Guard",
+            "overview": "RearGuard AI is a real-time rear collision detection assistant built with Flutter and a custom YOLO ONNX pipeline. Point the rear camera at traffic and it estimates how far objects are and whether you are at risk, in milliseconds, fully on-device with no cloud dependency.",
+            "features": [
+                    "Real-time detection at 15+ FPS with bounding boxes and distance overlays",
+                    "Distance estimation with a pinhole-camera model and real-world dimensions for 80 object classes",
+                    "View-angle awareness: tells front/rear from side profiles and picks the matching dimension",
+                    "Three-tier risk system: Clear, Caution and High Risk",
+                    "Photo analysis mode to run the same pipeline on gallery images",
+                    "Runs fully on-device through ONNX Runtime, with no network calls or API keys"
+            ],
+            "tech": [
+                    "Flutter",
+                    "Dart",
+                    "YOLO",
+                    "ONNX Runtime",
+                    "Computer Vision",
+                    "On-device AI"
+            ],
+            "links": {
+                    "github": "https://github.com/Huzaifa-Shabbir/RearGuard",
+                    "ios": "",
+                    "android": "",
+                    "linkedin": ""
+            }
+        },
+        "resumepipeline": {
+            "icon": "fa-file-lines",
+            "name": "AI Resume Pipeline",
+            "overview": "Every role needs a different resume: mobile for Flutter, agents and LLMs for AI engineering, a different layout for full-stack. Rewriting and reformatting one for every posting took hours, so I automated it with a custom n8n pipeline. Instead of one generic AI prompt, the work is split into focused steps. I paste a job description, run the pipeline, and a PDF and an editable DOCX arrive in my Gmail in about 15 seconds.",
+            "features": [
+                    "Ingestion & alignment: takes my raw background data and the target job description",
+                    "Data drafter: maps my history to the keywords and frameworks the job requires",
+                    "Density controller: a punchy 1-page resume, or a detailed 2-page one that pulls real forgotten details and secondary projects from my raw data",
+                    "Ambiguity & fact-check gate: a QA node reviews the draft against my original data and flags unclear projects, future-dated timelines and unconfirmed skills as warnings instead of guessing",
+                    "Dual-engine output: one branch makes a print-ready PDF, the other compiles an editable DOCX through ConvertAPI",
+                    "Automated delivery: a Merge node combines both files and sends them as a single Gmail attachment package"
+            ],
+            "tech": [
+                    "n8n",
+                    "AI / LLMs",
+                    "Workflow Automation",
+                    "ConvertAPI",
+                    "Gmail",
+                    "HTML to PDF"
+            ],
+            "contribution": "Designed and built the whole pipeline end to end, from the multi-step AI workflow and fact-check gate to the PDF/DOCX generation and email delivery.",
+            "links": {
+                    "github": "",
+                    "ios": "",
+                    "android": "",
+                    "linkedin": "https://www.linkedin.com/posts/hamza-naveed-_n8n-automation-ai-activity-7481672416830861312-vaa0"
+            }
+        },
+            "cargorun": {
+                    "icon": "fa-truck-fast",
+                    "name": "CargoRun",
+                    "overview": "CargoRun – On-Demand Cargo Delivery Platform. A scalable Uber/inDrive-style cargo delivery platform built with Flutter and a microservices-based backend. The app supports customer bookings, vehicle selection, dynamic route-based pricing, rider discovery, and real-time location tracking. The platform is deployed using Docker and Coolify on a VPS.",
+                    "features": [
+                            "Real-time rider location tracking",
+                            "Automatic rider matching with expanding search radius",
+                            "Distance- and time-based pricing",
+                            "Vehicle type selection and booking",
+                            "Authentication and notifications",
+                            "Real-time calling/communication",
+                            "Dockerized microservices architecture",
+                            "Mapbox-based routing and location services",
+                            "Supabase PostgreSQL + Redis"
+                    ],
+                    "tech": [
+                            "Flutter",
+                            "Microservices",
+                            "Docker",
+                            "Coolify",
+                            "Redis",
+                            "Supabase PostgreSQL",
+                            "Mapbox"
+                    ],
+                    "contribution": "Worked on the Flutter mobile application and the backend services: authentication, notifications, pricing, routing, Redis, Supabase PostgreSQL and real-time communication.",
+                    "links": {
+                            "linkedin": "https://www.linkedin.com/in/hamza-naveed-3aa01b289/",
+                            "github": "",
+                            "ios": "https://apps.apple.com/us/app/cargorun-9ja/id6757319928",
+                            "android": "https://play.google.com/store/apps/details?id=com.cargorun.app9ja&pcampaignid=web_share"
+                    }
+            },
+            "elitedent": {
+                    "icon": "fa-tooth",
+                    "name": "EliteDent",
+                    "overview": "EliteDent – AI-Powered Dental Communication Platform. A healthcare communication platform designed to connect dental clinics, dentists, administrators, and dental laboratories through a secure workflow. The application is designed with healthcare privacy requirements in mind and includes an AI-assisted workflow for improving communication and handling dental-related information.",
+                    "features": [
+                            "Flutter-based responsive healthcare application",
+                            "Admin, dentist, and dental laboratory roles",
+                            "Email/password and phone/password authentication",
+                            "Admin approval and account management",
+                            "Dentist–lab communication and messaging",
+                            "AI-assisted dental communication workflows",
+                            "Secure backend integration",
+                            "iPad-focused UI/UX design",
+                            "Healthcare privacy and security considerations"
+                    ],
+                    "tech": [
+                            "Flutter",
+                            "AI Workflows",
+                            "Role-based Access",
+                            "Authentication",
+                            "Messaging"
+                    ],
+                    "contribution": "Developed the Flutter application with role-based interfaces for admins, dentists, and labs, including authentication, messaging, communication workflows, and administrative approval processes.",
+                    "links": {
+                            "linkedin": "https://www.linkedin.com/posts/hamza-naveed-_softwareengineering-flutter-fastapi-activity-7498362395275264000-P_KR?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEXyrXIBOPznvhUFb04dNM7ub7d0DOSHCps",
+                            "github": "",
+                            "ios": "https://apps.apple.com/pl/app/elite-dent/id6803564344",
+                            "android": ""
+                    }
+            },
+            "finance": {
+                    "icon": "fa-wallet",
+                    "name": "Finance Master",
+                    "overview": "Finance Master is a comprehensive offline finance manager that helps users track bank accounts, wallets, transactions, stocks (with automatic PSX price updates), dividends, goals, secure notes, and saved passwords. It includes encrypted backups and fingerprint protection for privacy.",
+                    "features": [
+                            "Track multiple bank accounts and wallets with analytics",
+                            "Transaction history and income/expense breakdown",
+                            "Stock portfolio tracking with timeline and P/L per asset",
+                            "Automatic price updates for Pakistan Stock Exchange (PSX)",
+                            "Dividend tracking and reporting",
+                            "Encrypted offline backups and fingerprint protection",
+                            "Secure local password vault and financial notes",
+                            "Goal tracking and financial planning"
+                    ],
+                    "tech": [
+                            "Flutter",
+                            "SQFLite",
+                            "Local Encryption",
+                            "PSX API",
+                            "Biometrics"
+                    ],
+                    "links": {
+                            "linkedin": "https://www.linkedin.com/posts/hamza-naveed-_one-of-the-most-difficult-task-in-investment-ugcPost-7469328843904827393-c-Ui/",
+                            "github": "",
+                            "ios": "",
+                            "android": ""
+                    }
+            },
+            "remotex": {
+                    "icon": "fa-wifi",
+                    "name": "RemoteX",
+                    "overview": "RemoteX is an innovative remote desktop control system. It enables seamless control of devices across different platforms with a focus on intuitive user experience and robust security.",
+                    "features": [
+                            "Cross-platform device connectivity",
+                            "Real-time command execution",
+                            "Encrypted secure communication",
+                            "Multi-device management",
+                            "Responsive UI/UX"
+                    ],
+                    "tech": [
+                            "C++",
+                            "Flutter",
+                            "Node.js",
+                            "Supabase",
+                            "Network Programming"
+                    ],
+                    "links": {
+                            "linkedin": "https://www.linkedin.com/in/hamza-naveed-3aa01b289/",
+                            "github": "",
+                            "ios": "",
+                            "android": ""
+                    }
+            },
+            "restaurant": {
+                    "icon": "fa-utensils",
+                    "name": "Zestup Restaurant",
+                    "overview": "A complete restaurant ordering mobile app developed during my internship. Customers can browse menus, place orders, track deliveries, and manage their accounts. The app focuses on usability, fast performance, and smooth interaction between customer and restaurant.",
+                    "features": [
+                            "Browse restaurant menus with categories and item details",
+                            "Place and customize orders directly from the app",
+                            "Track order status and delivery progress in real-time",
+                            "Manage account information and view order history",
+                            "Push notifications for order updates and promotions"
+                    ],
+                    "tech": [
+                            "Flutter",
+                            "Firebase",
+                            "Sockets"
+                    ],
+                    "contribution": "Developed the entire frontend from scratch. Implemented real-time order and delivery tracking using sockets for live location updates of delivery drivers, built a complete cart management system, and optimized the app for smooth performance.",
+                    "links": {
+                            "linkedin": "https://www.linkedin.com/in/hamza-naveed-3aa01b289/",
+                            "github": "",
+                            "ios": "",
+                            "android": ""
+                    }
+            },
+            "zestup": {
+                    "icon": "fa-truck",
+                    "name": "Zestup Delivery",
+                    "overview": "A specialized mobile application for delivery drivers to manage orders, track routes, and communicate with customers in real-time. Built with performance and battery efficiency in mind.",
+                    "features": [
+                            "Real-time GPS tracking and navigation",
+                            "Order management dashboard",
+                            "Customer communication system",
+                            "Route optimization",
+                            "Delivery confirmation with photos"
+                    ],
+                    "tech": [
+                            "Flutter",
+                            "Firebase",
+                            "Google Maps API",
+                            "Real-time Database",
+                            "Sockets"
+                    ],
+                    "links": {
+                            "linkedin": "https://www.linkedin.com/in/hamza-naveed-3aa01b289/",
+                            "github": "",
+                            "ios": "",
+                            "android": ""
+                    }
+            },
+            "papers": {
+                    "icon": "fa-book",
+                    "name": "Fast Past Papers",
+                    "overview": "A comprehensive student resource application for accessing and studying past exam papers and academic resources. Built to help students prepare effectively with organized content. It has helped 100+ students with exam preparation.",
+                    "features": [
+                            "Extensive past papers database sorted by subject and year",
+                            "Multiple subject support",
+                            "Answer key references",
+                            "Bookmarking and favorites",
+                            "Offline viewing capability",
+                            "Calculate SGPA and CGPA",
+                            "In-app feedback and log management",
+                            "Different roles for users (Admin, editor, user)"
+                    ],
+                    "tech": [
+                            "Flutter",
+                            "Firebase",
+                            "Supabase",
+                            "PDF Rendering",
+                            "Local Caching"
+                    ],
+                    "links": {
+                            "linkedin": "https://www.linkedin.com/posts/hamza-naveed-3aa01b289_past-paper-academic-resource-app-activity-7361270421867872256-mvNi",
+                            "github": "",
+                            "ios": "",
+                            "android": ""
+                    }
+            },
+            "ups": {
+                    "icon": "fa-shopping-cart",
+                    "name": "Electrify",
+                    "overview": "A comprehensive online platform designed for UPS sellers and service providers. This full-stack application enables merchants to manage inventory, process orders, and deliver services through an intuitive web interface.",
+                    "features": [
+                            "Seller dashboard with analytics",
+                            "Product and inventory management",
+                            "Order processing and fulfillment tracking",
+                            "Customer reviews and ratings",
+                            "Responsive design for all devices",
+                            "Real-time order notifications",
+                            "Secure authentication and authorization"
+                    ],
+                    "tech": [
+                            "Node.js",
+                            "Express",
+                            "REST APIs"
+                    ],
+                    "contribution": "Developed the backend architecture. Designed and implemented the APIs for order management, user operations, and seller interactions, ensuring efficient server-side handling of orders and live updates.",
+                    "links": {
+                            "linkedin": "https://www.linkedin.com/in/hamza-naveed-3aa01b289/",
+                            "github": "",
+                            "ios": "",
+                            "android": ""
+                    }
+            },
+            "quickmart": {
+                    "icon": "fa-store",
+                    "name": "Quick Mart",
+                    "overview": "Quick Mart is a database-driven store management system developed as part of my Database Lab project. It connects a React-based web interface with an MS SQL Server database to manage store operations such as inventory, orders, customers, and transactions.",
+                    "features": [
+                            "Inventory and stock management system",
+                            "Customer and order record management",
+                            "Employee data handling",
+                            "Supplier information for restocking",
+                            "Transaction history and sales records"
+                    ],
+                    "tech": [
+                            "React",
+                            "MS SQL Server",
+                            "Node.js",
+                            "Express",
+                            "SQL"
+                    ],
+                    "contribution": "Designed the complete relational database schema in MS SQL Server, created tables, relationships, constraints and queries, and integrated the database with a web interface for CRUD operations on inventory, orders, and customers.",
+                    "links": {
+                            "linkedin": "https://www.linkedin.com/posts/huzaifa-shabbir-b8022a2a3_reactjs-mssql-fullstackdevelopment-ugcPost-7335574695108358146-tWo_",
+                            "github": "",
+                            "ios": "",
+                            "android": ""
+                    }
+            },
+            "moneymingle": {
+                    "icon": "fa-university",
+                    "name": "Money Mingle",
+                    "overview": "Money Mingle is a banking management system developed as my Semester 2 programming project. It simulates core banking operations such as account creation, deposits, withdrawals, fund transfers, and transaction tracking, applying object-oriented programming concepts to design a structured and secure system.",
+                    "features": [
+                            "Create and manage customer bank accounts",
+                            "Deposit and withdraw funds securely",
+                            "Transfer money between accounts",
+                            "Transaction history tracking",
+                            "Basic security and validation mechanisms"
+                    ],
+                    "tech": [
+                            "C++",
+                            "Object-Oriented Programming",
+                            "File Handling",
+                            "Data Structures"
+                    ],
+                    "contribution": "Designed and developed the core banking system: account management, transaction processing, and secure data storage using file handling, applying encapsulation, inheritance, and modular class design.",
+                    "links": {
+                            "linkedin": "https://www.linkedin.com/posts/hamza-naveed-3aa01b289_moneymingle-ugcPost-7212058573869096961-Srai",
+                            "github": "",
+                            "ios": "",
+                            "android": ""
+                    }
+            },
+            "flaptap": {
+                    "icon": "fa-microchip",
+                    "name": "Flap Tap (Assembly)",
+                    "overview": "A challenging implementation of Flappy Bird in pure x86 Assembly language. This low-level project demonstrates a deep understanding of computer architecture and graphics programming.",
+                    "features": [
+                            "Direct memory manipulation for graphics",
+                            "Hardware-level optimizations",
+                            "Interrupt handling for input",
+                            "Efficient animation routines",
+                            "Minimal resource footprint",
+                            "Real-time performance"
+                    ],
+                    "tech": [
+                            "x86 Assembly",
+                            "Graphics Mode",
+                            "Interrupt Handling",
+                            "Memory Management",
+                            "Hardware I/O"
+                    ],
+                    "contribution": "Overcame complex memory addressing modes, optimized code for minimal cycles, and debugged at the assembly level to achieve smooth gameplay despite hardware constraints.",
+                    "links": {
+                            "linkedin": "https://www.linkedin.com/posts/huzaifa-shabbir-b8022a2a3_coal-semesterproject-computerorganization-ugcPost-7270503995536785409-Cog0",
+                            "github": "",
+                            "ios": "",
+                            "android": ""
+                    }
+            },
+            "flappycpp": {
+                    "icon": "fa-gamepad",
+                    "name": "Flappy Bird (C++)",
+                    "overview": "A recreation of the classic Flappy Bird game using C++ and SFML. This project demonstrates game development fundamentals including collision detection, physics, and event handling.",
+                    "features": [
+                            "Smooth bird physics and animation",
+                            "Procedural pipe generation",
+                            "Collision detection system",
+                            "Score tracking and high scores",
+                            "Sound effects and background music",
+                            "Responsive controls"
+                    ],
+                    "tech": [
+                            "C++",
+                            "SFML",
+                            "Collision Detection",
+                            "File I/O"
+                    ],
+                    "contribution": "Gained a deep understanding of game development concepts, memory management in C++, physics implementation and real-time event processing.",
+                    "links": {
+                            "drive": "https://drive.google.com/file/d/1UgK_iLOWh-o-XShJ4IHD9R4VKLoSNUPd/view?usp=sharing",
+                            "github": "",
+                            "ios": "",
+                            "android": ""
+                    }
+            }
+};
+
+        const LINK_META = {
+            ios:      { label: 'App Store',   icon: 'fab fa-apple' },
+            android:  { label: 'Google Play', icon: 'fab fa-google-play' },
+            github:   { label: 'GitHub',      icon: 'fab fa-github' },
+            linkedin: { label: 'LinkedIn',    icon: 'fab fa-linkedin' },
+            drive:    { label: 'Project Files', icon: 'fab fa-google-drive' }
+        };
+        const LINK_ORDER = ['ios', 'android', 'github', 'linkedin', 'drive'];
+
+        const pmRoot = document.getElementById('project-modal');
+        const pmBox = pmRoot.querySelector('.project-modal-box');
+        const pmBody = document.getElementById('pm-body');
+        let pmLastFocus = null;
+
+        const escHtml = (t) => String(t).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+        function openProject(id, trigger) {
+            const p = PROJECTS[id];
+            if (!p) return;
+            pmLastFocus = trigger || document.activeElement;
+            document.getElementById('pm-title').textContent = p.name;
+            const card = document.querySelector(`.creator-item[data-project="${id}"] .creator-icon`);
+            const icon = document.getElementById('pm-icon');
+            icon.className = 'creator-icon ' + [...card.classList].find(c => /^c\d$/.test(c));
+            icon.innerHTML = `<i class="fas ${p.icon}"></i>`;
+
+            const links = LINK_ORDER.filter(k => p.links[k]).map(k =>
+                `<a class="pm-link" href="${escHtml(p.links[k])}" target="_blank" rel="noopener"><i class="${LINK_META[k].icon}"></i> ${LINK_META[k].label}</a>`).join('');
+
+            pmBody.innerHTML =
+                `<section class="pm-section"><h4>Overview</h4><p>${escHtml(p.overview)}</p></section>` +
+                `<section class="pm-section"><h4>Key Features</h4><ul class="pm-features">${p.features.map(f => `<li>${escHtml(f)}</li>`).join('')}</ul></section>` +
+                `<section class="pm-section"><h4>Technologies</h4><div class="tech-tags">${p.tech.map(t => `<span class="tag">${escHtml(t)}</span>`).join('')}</div></section>` +
+                (p.contribution ? `<section class="pm-section"><h4>My Contribution</h4><p>${escHtml(p.contribution)}</p></section>` : '') +
+                (links ? `<section class="pm-section"><h4>Links</h4><div class="pm-links">${links}</div></section>` : '');
+
+            const sbw = window.innerWidth - document.documentElement.clientWidth;
+            document.body.style.overflow = 'hidden';
+            if (sbw > 0) document.body.style.paddingRight = sbw + 'px';
+            pmRoot.hidden = false;
+            pmBox.scrollTop = 0;
+            requestAnimationFrame(() => { pmRoot.classList.add('open'); pmBox.focus({ preventScroll: true }); });
+        }
+
+        function closeProject() {
+            if (pmRoot.hidden) return;
+            pmRoot.classList.remove('open');
+            pmRoot.hidden = true;
+            document.body.style.overflow = '';
+            document.body.style.paddingRight = '';
+            if (pmLastFocus && pmLastFocus.focus) pmLastFocus.focus({ preventScroll: true });
+        }
+
+        document.querySelectorAll('.creator-item[data-project]').forEach(card => {
+            card.addEventListener('click', () => openProject(card.dataset.project, card));
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openProject(card.dataset.project, card); }
+            });
+        });
+        document.getElementById('pm-close').addEventListener('click', closeProject);
+        pmRoot.addEventListener('click', (e) => { if (e.target === pmRoot) closeProject(); });
+        document.addEventListener('keydown', (e) => {
+            if (pmRoot.hidden) return;
+            if (e.key === 'Escape') { closeProject(); return; }
+            if (e.key === 'Tab') {   // keep focus inside the popup
+                const f = [...pmBox.querySelectorAll('a[href], button')];
+                if (!f.length) return;
+                const first = f[0], last = f[f.length - 1];
+                if (e.shiftKey && (document.activeElement === first || document.activeElement === pmBox)) { e.preventDefault(); last.focus(); }
+                else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+            }
+        });
+
+        // Progress Bar Functionality
+        const progressBarFill = document.querySelector('.progress-bar-fill');
+        const checkpoints = document.querySelectorAll('.checkpoint');
+
+        function updateProgressBar() {
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight - windowHeight;
+            const scrolled = window.scrollY;
+            const progress = (scrolled / documentHeight) * 100;
+
+            progressBarFill.style.width = progress + '%';
+
+            // Update active checkpoint based on scroll position
+            const sections = ['hero', 'about', 'experience', 'skills', 'contact'];
+            let activeIndex = 0;
+
+            sections.forEach((sectionId, index) => {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top <= windowHeight / 2 && rect.bottom >= windowHeight / 2) {
+                        activeIndex = index;
+                    }
+                }
+            });
+
+            checkpoints.forEach((checkpoint, index) => {
+                if (index <= activeIndex) {
+                    checkpoint.classList.add('active');
+                } else {
+                    checkpoint.classList.remove('active');
+                }
+            });
+        }
+
+        // Checkpoint click handlers
+        checkpoints.forEach(checkpoint => {
+            checkpoint.addEventListener('click', () => {
+                const sectionId = checkpoint.getAttribute('data-section');
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    scrollToSection(section);
+                }
+            });
+        });
+
+        onScrollFrame(updateProgressBar);
+        window.addEventListener('resize', updateProgressBar);
+        updateProgressBar();
+
+    </script>
 </body>
 </html>
